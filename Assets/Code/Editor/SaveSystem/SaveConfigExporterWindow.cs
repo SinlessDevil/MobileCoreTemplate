@@ -33,7 +33,7 @@ namespace Code.Editor.Save
         [MenuItem("Tools/Save Window/Save Config Exporter Window", false, 2001)]
         private static void OpenWindow()
         {
-            var window = GetWindow<SaveConfigExporterWindow>();
+            SaveConfigExporterWindow window = GetWindow<SaveConfigExporterWindow>();
             window.titleContent = new GUIContent("Save Config Exporter Window");
             window.minSize = new Vector2(500, 400);
             window.Show();
@@ -70,10 +70,8 @@ namespace Code.Editor.Save
                 _targetAsset, typeof(ScriptableObject), true);
             SirenixEditorGUI.EndBox();
 
-            if (_targetAsset == null)
-            {
+            if (_targetAsset == null) 
                 EditorGUILayout.HelpBox("Assign a ScriptableObject to export/import as JSON.", MessageType.Warning);
-            }
         }
 
         private void DrawJsonControls()
@@ -93,10 +91,8 @@ namespace Code.Editor.Save
 
                 GUI.backgroundColor = new Color(1f, 0.85f, 0.3f);
                 GUILayoutOption[] options = { GUILayout.Width(position.width * 0.4f), GUILayout.Height(30) };
-                if (GUILayout.Button("Overwrite Selected", options))
-                {
+                if (GUILayout.Button("Overwrite Selected", options)) 
                     OverwriteJsonFile(_jsonFiles[_selectedFileIndex]);
-                }
 
                 GUI.backgroundColor = Color.white;
                 _selectedFileIndex = EditorGUILayout
@@ -109,10 +105,8 @@ namespace Code.Editor.Save
             GUIStyle centerStyle = new GUIStyle(EditorStyles.label) { alignment = TextAnchor.MiddleCenter };
             EditorGUILayout.LabelField("All Files", centerStyle);
 
-            foreach (var filePath in _jsonFiles)
-            {
+            foreach (var filePath in _jsonFiles) 
                 DrawJsonFileEntry(filePath);
-            }
 
             SirenixEditorGUI.EndBox();
         }
@@ -138,10 +132,8 @@ namespace Code.Editor.Save
             EditorGUILayout.BeginHorizontal();
 
             GUI.backgroundColor = new Color(0.4f, 1f, 0.4f);
-            if (GUILayout.Button("Load", GUILayout.Width(position.width * 0.3f)))
-            {
+            if (GUILayout.Button("Load", GUILayout.Width(position.width * 0.3f))) 
                 LoadJsonToTarget(filePath);
-            }
 
             GUI.backgroundColor = Color.white;
             GUILayout.Label(fileName, GUILayout.ExpandWidth(true));

@@ -1,3 +1,4 @@
+using System;
 using Code.Services.Finish.Lose;
 using Code.Services.Finish.Win;
 using Code.Services.Levels;
@@ -28,10 +29,8 @@ namespace Code.Services.Finish
                 case LevelTypeId.Regular:
                     _winService.Win();
                     break;
-                case LevelTypeId.Special:
-                case LevelTypeId.Bonus:
-                    _winService.BonusWin();
-                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 

@@ -41,7 +41,7 @@ namespace Code.Editor.Save
         [MenuItem("Tools/Save Window/All Saves Window", false, 2001)]
         private static void OpenWindow()
         {
-            var window = GetWindow<SaveWindow>();
+            SaveWindow window = GetWindow<SaveWindow>();
             window.titleContent = new GUIContent("All Saves Window");
             window.minSize = new Vector2(500, 600);
             window.Show();
@@ -61,7 +61,8 @@ namespace Code.Editor.Save
         private void DrawFoldoutSection(ref bool foldout, string title, string path, string message, string data, ref Vector2 scroll, Action refresh, Action delete)
         {
             foldout = SirenixEditorGUI.Foldout(foldout, title);
-            if (!foldout) return;
+            if (!foldout) 
+                return;
 
             SirenixEditorGUI.BeginBox();
 
@@ -178,33 +179,33 @@ namespace Code.Editor.Save
 
         private void DeletePlayerPrefs()
         {
-            if (PlayerPrefs.HasKey(PlayerPrefsKey))
-            {
-                PlayerPrefs.DeleteKey(PlayerPrefsKey);
-                PlayerPrefs.Save();
-                Debug.Log("PlayerPrefs deleted.");
-                Refresh();
-            }
+            if (!PlayerPrefs.HasKey(PlayerPrefsKey)) 
+                return;
+            
+            PlayerPrefs.DeleteKey(PlayerPrefsKey);
+            PlayerPrefs.Save();
+            Debug.Log("PlayerPrefs deleted.");
+            Refresh();
         }
 
         private void DeleteJson()
         {
-            if (File.Exists(JsonFilePath))
-            {
-                File.Delete(JsonFilePath);
-                Debug.Log("JSON file deleted.");
-                Refresh();
-            }
+            if (!File.Exists(JsonFilePath)) 
+                return;
+            
+            File.Delete(JsonFilePath);
+            Debug.Log("JSON file deleted.");
+            Refresh();
         }
 
         private void DeleteXml()
         {
-            if (File.Exists(XmlFilePath))
-            {
-                File.Delete(XmlFilePath);
-                Debug.Log("XML file deleted.");
-                Refresh();
-            }
+            if (!File.Exists(XmlFilePath)) 
+                return;
+            
+            File.Delete(XmlFilePath);
+            Debug.Log("XML file deleted.");
+            Refresh();
         }
 
         private string GetPlayerPrefsPath()

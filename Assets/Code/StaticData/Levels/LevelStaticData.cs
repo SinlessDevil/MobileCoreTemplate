@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Code.StaticData.Levels
@@ -10,13 +9,4 @@ namespace Code.StaticData.Levels
         public int LevelId;
         public LevelTypeId LevelTypeId;
     }
-
-    [Serializable]
-    public enum LevelTypeId
-    {
-        Regular = 0, 
-        Special = 1,
-        Bonus = 2,
-    }
-    
 }

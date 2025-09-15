@@ -1,5 +1,6 @@
 ﻿using Code.Services.Factories.UIFactory;
 using Code.Services.Providers.Widgets;
+using Code.UI.Game;
 
 namespace Code.Infrastructure.StateMachine.Game.States
 {
@@ -12,9 +13,9 @@ namespace Code.Infrastructure.StateMachine.Game.States
         private readonly IWidgetProvider _widgetProvider;
 
         public LoadLevelState(
-            IStateMachine<IGameState> gameStateMachine, 
+            IStateMachine<IGameState> gameStateMachine,
             ISceneLoader sceneLoader,
-            ILoadingCurtain loadingCurtain, 
+            ILoadingCurtain loadingCurtain,
             IUIFactory uiFactory,
             IWidgetProvider widgetProvider)
         {
@@ -46,20 +47,20 @@ namespace Code.Infrastructure.StateMachine.Game.States
         private void InitGameWorld()
         {
             _uiFactory.CreateUiRoot();
-            
+
             InitHud();
-            
+
             InitProviders();
         }
-        
+
         private void InitProviders()
         {
             _widgetProvider.CreatePoolWidgets();
         }
-        
+
         private void InitHud()
         {
-            var gameHud = _uiFactory.CreateGameHud();
+            GameHud gameHud = _uiFactory.CreateGameHud();
             gameHud.Initialize();
         }
     }
