@@ -4,12 +4,14 @@
       "name": "package.openupm.com",
       "url": "https://package.openupm.com",
       "scopes": [
-        "com.svermeulen.extenject"
+        "com.svermeulen.extenject",
+        "com.cysharp.unitask"
       ]
     }
   ],
   "dependencies": {
     "com.svermeulen.extenject": "9.2.0-stcf3",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.unity.addressables": "1.21.21",
     "com.unity.ai.navigation": "2.0.6",
     "com.unity.collab-proxy": "2.2.0",
