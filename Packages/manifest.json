@@ -10,8 +10,9 @@
     }
   ],
   "dependencies": {
-    "com.svermeulen.extenject": "9.2.0-stcf3",
+    "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.svermeulen.extenject": "9.2.0-stcf3",
     "com.unity.addressables": "1.21.21",
     "com.unity.ai.navigation": "2.0.6",
     "com.unity.collab-proxy": "2.2.0",
