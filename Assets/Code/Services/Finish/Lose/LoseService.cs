@@ -1,6 +1,7 @@
 using Code.Services.Window;
 using Code.Window;
 using Code.Window.Finish.Lose;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Services.Finish.Lose
 {
@@ -13,13 +14,14 @@ namespace Code.Services.Finish.Lose
         {
             _windowService = windowService;
         }
-        
-        public void Lose()
+
+        public void Lose() => ShowLoseWindowAsync().Forget();
+
+        private async UniTaskVoid ShowLoseWindowAsync()
         {
-            var window = _windowService.Open(WindowTypeId.Lose);
+            var window = await _windowService.Open(WindowTypeId.Lose);
             var loseWindow = window.GetComponent<LoseWindow>();
             loseWindow.Initialize();
         }
-        
     }
 }

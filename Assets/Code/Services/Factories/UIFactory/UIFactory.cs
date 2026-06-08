@@ -1,10 +1,12 @@
-﻿using Code.Services.StaticData;
+using Code.Services.AssetProvider;
+using Code.Services.StaticData;
 using Code.StaticData;
 using Code.UI;
 using Code.UI.Game;
 using Code.UI.Menu;
 using Code.UI.Menu.Windows.Map;
 using Code.Window;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Zenject;
 
@@ -12,55 +14,51 @@ namespace Code.Services.Factories.UIFactory
 {
     public class UIFactory : Factory, IUIFactory
     {
-        private readonly IInstantiator _instantiator;
         private readonly IStaticDataService _staticData;
 
         private Transform _uiRoot;
 
         public UIFactory(
             IInstantiator instantiator,
-            IStaticDataService staticDataService) : base(instantiator)
+            IAssetProvider assetProvider,
+            IStaticDataService staticDataService) : base(instantiator, assetProvider)
         {
-            _instantiator = instantiator;
             _staticData = staticDataService;
         }
 
         public GameHud GameHud { get; private set; }
         public MenuHud MenuHud { get; private set; }
 
-        public void CreateUiRoot()
+        public async UniTask CreateUiRoot()
         {
-            _uiRoot = Instantiate(ResourcePath.UiRootPath).transform;
+            _uiRoot = (await Instantiate(ResourcePath.UiRootPath)).transform;
         }
 
-        public RectTransform CrateWindow(WindowTypeId windowTypeId)
+        public async UniTask<RectTransform> CreateWindow(WindowTypeId windowTypeId)
         {
             WindowConfig config = _staticData.ForWindow(windowTypeId);
-            GameObject window = Instantiate(config.Prefab, _uiRoot);
+            GameObject window = await Instantiate(config.PrefabReference, _uiRoot);
             return window.GetComponent<RectTransform>();
         }
 
-        public GameHud CreateGameHud()
+        public async UniTask<GameHud> CreateGameHud()
         {
-            return GameHud = Instantiate(ResourcePath.GameHudPath).GetComponent<GameHud>();
+            return GameHud = (await Instantiate(ResourcePath.GameHudPath)).GetComponent<GameHud>();
         }
 
-        public MenuHud CreateMenuHud()
+        public async UniTask<MenuHud> CreateMenuHud()
         {
-            return MenuHud = Instantiate(ResourcePath.MenuHudPath).GetComponent<MenuHud>();
-        }
-        
-        public Widget CreateWidget(Vector3 position, Quaternion rotation)
-        {
-            var widget = Instantiate(ResourcePath.WidgetPath, position, rotation, null)
-                .GetComponent<Widget>();
-            return widget;
+            return MenuHud = (await Instantiate(ResourcePath.MenuHudPath)).GetComponent<MenuHud>();
         }
 
-        public ItemLevel CreateItemLevel(Transform parent)
+        public async UniTask<Widget> CreateWidget(Vector3 position, Quaternion rotation)
         {
-            GameObject itemLevel = Instantiate(ResourcePath.ItemLevelPath, parent, true);
-            return itemLevel.GetComponent<ItemLevel>();
+            return (await Instantiate(ResourcePath.WidgetPath, position, rotation, null)).GetComponent<Widget>();
+        }
+
+        public async UniTask<ItemLevel> CreateItemLevel(Transform parent)
+        {
+            return (await Instantiate(ResourcePath.ItemLevelPath, parent, true)).GetComponent<ItemLevel>();
         }
     }
 }

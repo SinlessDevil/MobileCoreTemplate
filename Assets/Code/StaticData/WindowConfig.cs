@@ -1,6 +1,6 @@
 ﻿using System;
 using Code.Window;
-using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace Code.StaticData
 {
@@ -8,6 +8,6 @@ namespace Code.StaticData
     public class WindowConfig
     {
         public WindowTypeId WindowTypeId;
-        public GameObject Prefab;
+        public AssetReferenceGameObject PrefabReference;
     }
 }

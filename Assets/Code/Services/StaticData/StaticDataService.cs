@@ -13,28 +13,33 @@ namespace Code.Services.StaticData
     {
         private GameStaticData _gameStaticData;
         private BalanceStaticData _balanceStaticData;
+        private PreloadConfig _preloadConfig;
         private Dictionary<WindowTypeId, WindowConfig> _windowConfigs;
         private List<ChapterStaticData> _chapterStaticDatas = new();
-        
+
         public GameStaticData GameConfig => _gameStaticData;
         public BalanceStaticData Balance => _balanceStaticData;
         public List<ChapterStaticData> Chapters => _chapterStaticDatas;
+        public PreloadConfig PreloadConfig => _preloadConfig;
         
         public void LoadData()
         {
             _gameStaticData = Resources
                 .Load<GameStaticData>(ResourcePath.GameConfigPath);
-            
+
             _balanceStaticData = Resources
                 .Load<BalanceStaticData>(ResourcePath.GameBalancePath);
-            
+
             _windowConfigs = Resources
                 .Load<WindowStaticData>(ResourcePath.WindowsStaticDataPath)
                 .Configs.ToDictionary(x => x.WindowTypeId, x => x);
-            
+
             _chapterStaticDatas = Resources
                 .LoadAll<ChapterStaticData>(ResourcePath.ChaptersStaticDataPath)
                 .ToList();
+
+            _preloadConfig = Resources
+                .Load<PreloadConfig>(ResourcePath.PreloadConfigPath);
         }
 
         public WindowConfig ForWindow(WindowTypeId windowTypeId) => _windowConfigs[windowTypeId];

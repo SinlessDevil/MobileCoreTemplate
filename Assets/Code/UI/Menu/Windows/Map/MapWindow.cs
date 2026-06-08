@@ -9,6 +9,7 @@ using Code.Services.PersistenceProgress;
 using Code.Services.SaveLoad;
 using Code.Services.StaticData;
 using Code.StaticData.Levels;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -68,10 +69,10 @@ namespace Code.UI.Menu.Windows.Map
             }
 
             _chapters = _levelService.GetAllChapters();
-            
+
             _currentChapterIndex = _levelService.GetCurrentChapterIndex();
 
-            UpdateLevelUI();
+            UpdateLevelUIAsync().Forget();
         }
 
         private void UnsubscribeEvents()
@@ -103,7 +104,7 @@ namespace Code.UI.Menu.Windows.Map
                     throw new ArgumentOutOfRangeException(nameof(typeSwipe), typeSwipe, null);
             }
 
-            AnimationRefreshWindow(DisableButton, EnableButton, UpdateLevelUI);
+            AnimationRefreshWindow(DisableButton, EnableButton, () => UpdateLevelUIAsync().Forget());
         }
 
         private void AnimationRefreshWindow(Action disableButton, Action enableButton, Action refreshWindow)
@@ -130,20 +131,19 @@ namespace Code.UI.Menu.Windows.Map
             }
         }
 
-        private void UpdateLevelUI()
+        private async UniTask UpdateLevelUIAsync()
         {
             SetNameChapter();
-
             ClearLevelPool();
 
             var currentChapter = _chapters[_currentChapterIndex];
-            
+
             foreach (var level in currentChapter.Levels)
             {
                 var levelIndex = currentChapter.Levels.IndexOf(level) + 1;
                 var chapterIndex = _currentChapterIndex + 1;
 
-                var levelItem = GetPooledItemLevel();
+                var levelItem = await GetPooledItemLevel();
                 levelItem.Initialize(levelIndex, chapterIndex);
 
                 if (_levelService.IsLevelCurrent(chapterIndex, levelIndex))
@@ -176,7 +176,7 @@ namespace Code.UI.Menu.Windows.Map
             _chapterName.text = "Chapter " + currentChapter;
         }
 
-        private ItemLevel GetPooledItemLevel()
+        private async UniTask<ItemLevel> GetPooledItemLevel()
         {
             foreach (var item in _levelPool)
             {
@@ -187,7 +187,7 @@ namespace Code.UI.Menu.Windows.Map
                 }
             }
 
-            var newItem = _uiFactory.CreateItemLevel(_gridLayoutGroup.transform);
+            var newItem = await _uiFactory.CreateItemLevel(_gridLayoutGroup.transform);
             newItem.LoadLevelEvent += OnLoadLevel;
             _levelPool.Add(newItem);
             return newItem;

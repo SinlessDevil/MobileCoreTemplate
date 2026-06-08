@@ -1,45 +1,57 @@
+using Code.Services.AssetProvider;
 using Code.Services.Factories.UIFactory;
+using Code.Services.PreloaderConductor;
+using Code.UI.Menu;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.StateMachine.Game.States
 {
     public class LoadMenuState : IPayloadedState<string>, IGameState
     {
+        private readonly IStateMachine<IGameState> _gameStateMachine;
         private readonly ISceneLoader _sceneLoader;
         private readonly ILoadingCurtain _loadingCurtain;
         private readonly IUIFactory _uiFactory;
-        private readonly IStateMachine<IGameState> _gameStateMachine;
-        
+        private readonly IAssetProvider _assetProvider;
+        private readonly IAssetPreloaderConductor _preloaderConductor;
+
         public LoadMenuState(
             IStateMachine<IGameState> gameStateMachine,
             ISceneLoader sceneLoader,
             ILoadingCurtain loadingCurtain,
-            IUIFactory uiFactory)
+            IUIFactory uiFactory,
+            IAssetProvider assetProvider,
+            IAssetPreloaderConductor preloaderConductor)
         {
             _gameStateMachine = gameStateMachine;
             _sceneLoader = sceneLoader;
             _loadingCurtain = loadingCurtain;
             _uiFactory = uiFactory;
+            _assetProvider = assetProvider;
+            _preloaderConductor = preloaderConductor;
         }
-        
-        public void Enter(string payload)
+
+        public async UniTaskVoid Enter(string payload)
         {
             _loadingCurtain.Show();
-            _loadingCurtain.Hide();
-            
-            _sceneLoader.Load(payload, InitMenuWorld);
+            _assetProvider.CleanUp();
+            await _sceneLoader.LoadForce(payload, OnMenuLoad, _loadingCurtain);
         }
 
-        public void Exit()
+        public UniTaskVoid Exit()
         {
-            
+            return default;
         }
 
-        private void InitMenuWorld()
-        {
-            _uiFactory.CreateUiRoot();
+        private void OnMenuLoad() => SetupMenuWorldAsync().Forget();
 
-            var menuHud = _uiFactory.CreateMenuHud();
+        private async UniTask SetupMenuWorldAsync()
+        {
+            await _uiFactory.CreateUiRoot();
+            MenuHud menuHud = await _uiFactory.CreateMenuHud();
             menuHud.Initialize();
+            _preloaderConductor.TryPreload();
+            _loadingCurtain.Hide();
         }
     }
 }
