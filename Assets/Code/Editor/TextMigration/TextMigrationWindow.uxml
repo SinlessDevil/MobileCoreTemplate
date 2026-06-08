@@ -1,0 +1,29 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- Prefab -->
+        <ui:VisualElement class="section">
+            <ui:Label text="Source Prefab" class="section-title" />
+            <uie:ObjectField name="field-prefab" label="Prefab" />
+        </ui:VisualElement>
+
+        <!-- From → To row -->
+        <ui:VisualElement class="section from-to-row">
+            <ui:DropdownField name="dropdown-from" label="From" class="dropdown" />
+            <ui:Label text="→" class="arrow" />
+            <ui:DropdownField name="dropdown-to" label="To" class="dropdown" />
+        </ui:VisualElement>
+
+        <!-- Font fields (shown conditionally) -->
+        <uie:ObjectField name="field-tmp-font"    label="TMP Font Asset" class="font-field hidden" />
+        <uie:ObjectField name="field-legacy-font" label="Legacy Font"    class="font-field hidden" />
+
+        <!-- Info -->
+        <ui:HelpBox name="helpbox-info" message-type="Info" class="info-box" />
+
+        <!-- Apply -->
+        <ui:Button name="btn-apply" text="Apply Migration" class="btn-apply" />
+
+    </ui:ScrollView>
+</ui:UXML>

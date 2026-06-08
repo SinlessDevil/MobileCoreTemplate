@@ -1,0 +1,57 @@
+.section {
+    margin-bottom: 14px;
+    padding: 0 4px;
+}
+
+.section-title {
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+
+/* From → To row */
+.from-to-row {
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.dropdown {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+.arrow {
+    font-size: 20px;
+    -unity-font-style: bold;
+    margin: 0 10px 2px;
+    -unity-text-align: middle-center;
+}
+
+/* Font fields */
+.font-field {
+    margin-bottom: 8px;
+    padding: 0 4px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.info-box {
+    margin: 6px 4px 10px;
+}
+
+/* Apply button — blue */
+.btn-apply {
+    height: 38px;
+    margin: 0 4px 4px;
+    background-color: rgb(50, 130, 210);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -unity-font-style: bold;
+    font-size: 13px;
+}
+
+.btn-apply:hover    { background-color: rgb(70, 155, 230); }
+.btn-apply:disabled { background-color: rgb(90, 90, 90); color: rgb(170, 170, 170); }
+
+.hidden { display: none; }

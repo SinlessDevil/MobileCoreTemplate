@@ -9,16 +9,17 @@ using Code.Services.PersistenceProgress;
 using Code.Services.SaveLoad;
 using Code.Services.StaticData;
 using Code.StaticData.Levels;
-using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
+using DG.Tweening;
+using TMPro;
 
 namespace Code.UI.Menu.Windows.Map
 {
     public class MapWindow : BaseWindow
     {
-        [SerializeField] private Text _chapterName;
+        [SerializeField] private TMP_Text _chapterName;
         [SerializeField] private GridLayoutGroup _gridLayoutGroup;
         [SerializeField] private List<ButtonSwipeChapter> _buttonsSwipeChapter;
         [SerializeField] private List<CanvasGroup> _canvasGroups;
