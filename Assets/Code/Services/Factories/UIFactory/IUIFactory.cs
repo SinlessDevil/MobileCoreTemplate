@@ -1,22 +1,23 @@
-﻿using Code.UI;
+using Code.UI;
 using Code.UI.Game;
 using Code.UI.Menu;
 using Code.UI.Menu.Windows.Map;
 using Code.Window;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Code.Services.Factories.UIFactory
 {
     public interface IUIFactory
     {
-        public GameHud GameHud { get; }
-        public MenuHud MenuHud { get; }
+        GameHud GameHud { get; }
+        MenuHud MenuHud { get; }
 
-        public void CreateUiRoot();
-        public RectTransform CrateWindow(WindowTypeId windowTypeId);
-        public GameHud CreateGameHud();
-        public MenuHud CreateMenuHud();
-        public Widget CreateWidget(Vector3 position, Quaternion rotation);
-        public ItemLevel CreateItemLevel(Transform parent);
+        UniTask CreateUiRoot();
+        UniTask<RectTransform> CreateWindow(WindowTypeId windowTypeId);
+        UniTask<GameHud> CreateGameHud();
+        UniTask<MenuHud> CreateMenuHud();
+        UniTask<Widget> CreateWidget(Vector3 position, Quaternion rotation);
+        UniTask<ItemLevel> CreateItemLevel(Transform parent);
     }
 }

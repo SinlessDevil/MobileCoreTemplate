@@ -1,6 +1,8 @@
 using Code.Services.PersistenceProgress;
 using Code.Services.PersistenceProgress.Player;
 using Code.Services.SaveLoad;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Code.Infrastructure.StateMachine.Game.States
 {
@@ -11,8 +13,8 @@ namespace Code.Infrastructure.StateMachine.Game.States
         private readonly ISaveLoadFacade _saveLoadFacade;
 
         public LoadProgressState(
-            IStateMachine<IGameState> stateMachine, 
-            IPersistenceProgressService progressService, 
+            IStateMachine<IGameState> stateMachine,
+            IPersistenceProgressService progressService,
             ISaveLoadFacade saveLoadFacade)
         {
             _stateMachine = stateMachine;
@@ -20,31 +22,30 @@ namespace Code.Infrastructure.StateMachine.Game.States
             _saveLoadFacade = saveLoadFacade;
         }
 
-        public void Enter()
+        public UniTaskVoid Enter()
         {
             LoadOrCreatePlayerData();
-            
+            InitLoadingVersion();
             _stateMachine.Enter<BootstrapAnalyticState>();
+            return default;
         }
 
-        public void Exit()
+        public UniTaskVoid Exit()
         {
-            
+            return default;
         }
 
-        private PlayerData LoadOrCreatePlayerData()
+        private void LoadOrCreatePlayerData()
         {
-            var playerData = _progressService.PlayerData =
-                _saveLoadFacade.Load(SaveMethod.PlayerPrefs) != null ? 
-                    _saveLoadFacade.Load(SaveMethod.PlayerPrefs) : 
-                    CreatePlayerData();
-            return playerData;
+            _progressService.PlayerData =
+                _saveLoadFacade.Load(SaveMethod.PlayerPrefs) ?? new PlayerData();
         }
-        
-        private PlayerData CreatePlayerData()
+
+        private void InitLoadingVersion()
         {
-            PlayerData playerData = new PlayerData();
-            return playerData;
+            string version = Application.version;
+            if (_progressService.PlayerData.Loading.Version != version)
+                _progressService.PlayerData.Loading.Reset(version);
         }
     }
 }

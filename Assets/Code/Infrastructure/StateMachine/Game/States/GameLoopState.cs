@@ -3,6 +3,7 @@ using Code.Services.Levels;
 using Code.Services.LocalProgress;
 using Code.Services.Providers.Widgets;
 using Code.Services.Timer;
+using Cysharp.Threading.Tasks;
 
 namespace Code.Infrastructure.StateMachine.Game.States
 {
@@ -16,7 +17,7 @@ namespace Code.Infrastructure.StateMachine.Game.States
         private readonly ITimeService _timeService;
 
         public GameLoopState(
-            IStateMachine<IGameState> gameStateMachine, 
+            IStateMachine<IGameState> gameStateMachine,
             IInputService inputService,
             IWidgetProvider widgetProvider,
             ILevelService levelService,
@@ -30,25 +31,24 @@ namespace Code.Infrastructure.StateMachine.Game.States
             _levelLocalProgressService = levelLocalProgressService;
             _timeService = timeService;
         }
-        
-        public void Enter()
+
+        public UniTaskVoid Enter()
         {
-            
+            return default;
         }
 
         public void Update()
         {
-            
         }
 
-        public void Exit()
+        public UniTaskVoid Exit()
         {
             _inputService.Cleanup();
             _widgetProvider.CleanupPool();
             _levelService.Cleanup();
             _levelLocalProgressService.Cleanup();
-            
             _timeService.ResetTimer();
+            return default;
         }
     }
 }

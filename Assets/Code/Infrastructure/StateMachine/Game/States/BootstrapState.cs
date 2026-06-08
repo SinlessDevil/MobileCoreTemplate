@@ -1,4 +1,5 @@
-﻿using Code.Services.StaticData;
+using Code.Services.StaticData;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Code.Infrastructure.StateMachine.Game.States
@@ -11,9 +12,9 @@ namespace Code.Infrastructure.StateMachine.Game.States
         private readonly ILoadingCurtain _curtain;
 
         public BootstrapState(
-            IStateMachine<IGameState> stateMachine, 
-            ISceneLoader sceneLoader, 
-            IStaticDataService staticDataService, 
+            IStateMachine<IGameState> stateMachine,
+            ISceneLoader sceneLoader,
+            IStaticDataService staticDataService,
             ILoadingCurtain curtain)
         {
             _stateMachine = stateMachine;
@@ -22,17 +23,16 @@ namespace Code.Infrastructure.StateMachine.Game.States
             _curtain = curtain;
         }
 
-        public void Enter()
+        public async UniTaskVoid Enter()
         {
             Application.targetFrameRate = (int)_staticData.GameConfig.TargetFPS;
-            
             _curtain.Show();
-            _sceneLoader.Load(_staticData.GameConfig.InitialScene, OnLevelLoad);
+            await _sceneLoader.Load(_staticData.GameConfig.InitialScene, OnLevelLoad, isAddressable: false, _curtain);
         }
 
-        public void Exit()
+        public UniTaskVoid Exit()
         {
-
+            return default;
         }
 
         private void OnLevelLoad() => _stateMachine.Enter<LoadProgressState>();
