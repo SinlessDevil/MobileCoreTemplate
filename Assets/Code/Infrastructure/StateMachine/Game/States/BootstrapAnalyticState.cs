@@ -14,6 +14,7 @@ namespace Code.Infrastructure.StateMachine.Game.States
         public UniTaskVoid Enter()
         {
             _stateMachine.Enter<PreLoadGameState, TypeLoad>(TypeLoad.InitialLoading);
+            
             return default;
         }
 

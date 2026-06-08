@@ -16,6 +16,7 @@ namespace Code.Infrastructure
         private const float MinDisplayedProgress = 0.2f;
 
         private readonly IAssetPreloaderService _assetPreloader;
+        private AsyncOperationHandle<SceneInstance> _currentSceneHandle;
 
         public SceneLoader(IAssetPreloaderService assetPreloader)
         {
@@ -63,14 +64,17 @@ namespace Code.Infrastructure
         {
             if (isAddressable)
             {
-                AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(name);
-                while (!handle.IsDone)
+                if (_currentSceneHandle.IsValid())
+                    await Addressables.UnloadSceneAsync(_currentSceneHandle);
+
+                _currentSceneHandle = Addressables.LoadSceneAsync(name);
+                while (!_currentSceneHandle.IsDone)
                 {
-                    loadingCurtain?.ShowProgress(Mathf.Max(MinDisplayedProgress, handle.PercentComplete));
+                    loadingCurtain?.ShowProgress(Mathf.Max(MinDisplayedProgress, _currentSceneHandle.PercentComplete));
                     await UniTask.Yield();
                 }
 
-                if (!handle.Result.Scene.IsValid())
+                if (!_currentSceneHandle.Result.Scene.IsValid())
                 {
                     loadingCurtain?.ShowNoInternetWarning(() => LoadForce(name, onLevelLoad, loadingCurtain).Forget());
                     return;
