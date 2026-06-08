@@ -47,23 +47,23 @@
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0175811260228576" />
-      <entry key="MS500" value="1.5190213578439686" />
-      <entry key="S2" value="2.5675573519992456" />
-      <entry key="S5" value="3.89522304096597" />
-      <entry key="S10" value="5.009355017794233" />
-      <entry key="S30" value="6.199822375772128" />
-      <entry key="S60" value="6.579535045038252" />
-      <entry key="M2" value="6.784639032131738" />
-      <entry key="M5" value="7.203429602782536" />
-      <entry key="M10" value="10.006341724037595" />
-      <entry key="M15" value="13.647539052033542" />
-      <entry key="M30" value="21.60177237123628" />
-      <entry key="H1" value="28.619394205872993" />
-      <entry key="H2" value="33.30320130440012" />
-      <entry key="H4" value="36.01227636058334" />
-      <entry key="D1" value="38.48151311516524" />
-      <entry key="W1" value="38.925411421837225" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000120018299983" />
+      <entry key="S2" value="1.0939691243659682" />
+      <entry key="S5" value="2.0456888332857375" />
+      <entry key="S10" value="3.6304648046239154" />
+      <entry key="S30" value="6.022037892402408" />
+      <entry key="S60" value="6.925295633423344" />
+      <entry key="M2" value="7.482173966268513" />
+      <entry key="M5" value="8.825663550895067" />
+      <entry key="M10" value="11.931270274486096" />
+      <entry key="M15" value="15.434539918925761" />
+      <entry key="M30" value="24.509059073067608" />
+      <entry key="H1" value="34.373847751663746" />
+      <entry key="H2" value="41.89307469904575" />
+      <entry key="H4" value="46.57040527903491" />
+      <entry key="D1" value="51.03763456898059" />
+      <entry key="W1" value="51.86103949250262" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -85,23 +85,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9830347027188104" />
-      <entry key="MS500" value="1.4687661639163205" />
-      <entry key="S2" value="2.4680017802653076" />
-      <entry key="S5" value="3.8326002320849275" />
-      <entry key="S10" value="4.972725066901278" />
-      <entry key="S30" value="6.186223002414884" />
-      <entry key="S60" value="6.572545934548518" />
-      <entry key="M2" value="6.781095791901293" />
-      <entry key="M5" value="7.20199378841368" />
-      <entry key="M10" value="10.005589218859122" />
-      <entry key="M15" value="13.647007946514215" />
-      <entry key="M30" value="21.601474549072897" />
-      <entry key="H1" value="28.619230992860793" />
-      <entry key="H2" value="33.303114911346974" />
-      <entry key="H4" value="36.012231777669705" />
-      <entry key="D1" value="38.48150547386522" />
-      <entry key="W1" value="38.92541032480605" />
+      <entry key="MS100" value="0.9526379980439373" />
+      <entry key="MS500" value="0.9903548070976351" />
+      <entry key="S2" value="1.091382225223272" />
+      <entry key="S5" value="2.0438991303014546" />
+      <entry key="S10" value="3.6289156279156503" />
+      <entry key="S30" value="6.021186134054814" />
+      <entry key="S60" value="6.924805103957108" />
+      <entry key="M2" value="7.481860436775576" />
+      <entry key="M5" value="8.825134609148892" />
+      <entry key="M10" value="11.930589887609589" />
+      <entry key="M15" value="15.433886246140712" />
+      <entry key="M30" value="24.50856816155076" />
+      <entry key="H1" value="34.373539474232466" />
+      <entry key="H2" value="41.892900467148635" />
+      <entry key="H4" value="46.57031242305312" />
+      <entry key="D1" value="51.03761822465268" />
+      <entry key="W1" value="51.861037135326555" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -203,7 +203,23 @@
       <option name="project" value="LOCAL" />
       <updated>1780907848162</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: menuhud buttons">
+      <option name="closed" value="true" />
+      <created>1780908348598</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780908348598</updated>
+    </task>
+    <task id="LOCAL-00004" summary="upd: odin inscpector">
+      <option name="closed" value="true" />
+      <created>1780909182676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780909182676</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +248,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="edit: update project settings" />
     <MESSAGE value="upd: zenject to ump" />
-    <option name="LAST_COMMIT_MESSAGE" value="upd: zenject to ump" />
+    <MESSAGE value="fix: menuhud buttons" />
+    <MESSAGE value="edit: odin inscpector" />
+    <MESSAGE value="upd: odin inscpector" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd: odin inscpector" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
