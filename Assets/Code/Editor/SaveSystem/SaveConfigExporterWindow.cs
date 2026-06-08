@@ -3,182 +3,204 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor;
-using Sirenix.Utilities.Editor;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Code.Editor.Save
 {
-    public class SaveConfigExporterWindow : OdinEditorWindow
+    public class SaveConfigExporterWindow : EditorWindow
     {
         private const string FolderName = "ExportedData";
 
-        [InfoBox("Drag any ScriptableObject here and save or load as JSON")]
-        [InlineEditor(InlineEditorObjectFieldModes.Boxed)]
-        [SerializeField] private ScriptableObject _targetAsset;
-
-        private ScriptableObject _lastTargetAsset;
-        
-        private List<string> _jsonFiles = new();
-
         private string SaveFolderPath => Path.Combine(Application.dataPath, FolderName);
 
-        private int _selectedFileIndex = 0;
-        
-        private string GenerateJsonPath() =>
-            _targetAsset != null ? Path.Combine(SaveFolderPath, $"{_targetAsset.name}_{DateTime.Now:yyyyMMdd_HHmmss}.json") : null;
+        private ScriptableObject _targetAsset;
+        private int              _selectedFileIndex;
+        private List<string>     _jsonFiles = new();
+
+        // Cached UI refs
+        private ObjectField    _fieldAsset;
+        private HelpBox        _helpboxNoAsset;
+        private VisualElement  _containerInspector;
+        private VisualElement  _containerOverwrite;
+        private VisualElement  _containerFiles;
+        private ToolbarMenu    _dropdownFiles;
 
         [MenuItem("Tools/Save Window/Save Config Exporter Window", false, 2001)]
         private static void OpenWindow()
         {
-            SaveConfigExporterWindow window = GetWindow<SaveConfigExporterWindow>();
+            var window = GetWindow<SaveConfigExporterWindow>();
             window.titleContent = new GUIContent("Save Config Exporter Window");
             window.minSize = new Vector2(500, 400);
             window.Show();
         }
 
-        protected override void OnEnable()
+        public void CreateGUI()
         {
+            var uxml = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/Code/Editor/SaveSystem/SaveConfigExporterWindow.uxml");
+            var uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(
+                "Assets/Code/Editor/SaveSystem/SaveConfigExporterWindow.uss");
+
+            uxml.CloneTree(rootVisualElement);
+            rootVisualElement.styleSheets.Add(uss);
+
+            _fieldAsset         = rootVisualElement.Q<ObjectField>("field-asset");
+            _helpboxNoAsset     = rootVisualElement.Q<HelpBox>("helpbox-no-asset");
+            _containerInspector = rootVisualElement.Q<VisualElement>("container-inspector");
+            _containerOverwrite = rootVisualElement.Q<VisualElement>("container-overwrite");
+            _containerFiles     = rootVisualElement.Q<VisualElement>("container-files");
+            _dropdownFiles      = rootVisualElement.Q<ToolbarMenu>("dropdown-files");
+
+            _fieldAsset.objectType = typeof(ScriptableObject);
+            _fieldAsset.RegisterValueChangedCallback(evt =>
+            {
+                _targetAsset = evt.newValue as ScriptableObject;
+                OnAssetChanged();
+            });
+
+            rootVisualElement.Q<Button>("btn-save-new").clicked     += SaveNewJson;
+            rootVisualElement.Q<Button>("btn-overwrite").clicked    += OverwriteSelectedJson;
+
             Directory.CreateDirectory(SaveFolderPath);
+            RefreshAll();
+        }
+
+        private void OnAssetChanged()
+        {
+            _containerInspector.Clear();
+
+            bool hasAsset = _targetAsset != null;
+            _helpboxNoAsset.EnableInClassList("hidden", hasAsset);
+
+            if (hasAsset)
+            {
+                var inspector = new InspectorElement(_targetAsset);
+                _containerInspector.Add(inspector);
+            }
+
             RefreshJsonFiles();
+            RebuildFileListUI();
         }
 
-        protected override void DrawEditor(int index)
+        private void RefreshAll()
         {
-            DrawTargetAssetSection();
+            bool hasAsset = _targetAsset != null;
+            _helpboxNoAsset.EnableInClassList("hidden", hasAsset);
+            RefreshJsonFiles();
+            RebuildFileListUI();
+        }
 
-            if (_targetAsset == null)
-                return;
+        private void RefreshJsonFiles()
+        {
+            _jsonFiles = Directory.Exists(SaveFolderPath)
+                ? Directory.GetFiles(SaveFolderPath, "*.json")
+                    .Where(p => _targetAsset != null && Path.GetFileName(p).StartsWith(_targetAsset.name))
+                    .ToList()
+                : new List<string>();
 
-            if (_targetAsset != _lastTargetAsset)
+            _selectedFileIndex = 0;
+            UpdateDropdown();
+
+            bool hasFiles = _jsonFiles.Count > 0;
+            _containerOverwrite.EnableInClassList("hidden", !hasFiles || _targetAsset == null);
+        }
+
+        private void UpdateDropdown()
+        {
+            _dropdownFiles.menu.MenuItems().Clear();
+            for (int i = 0; i < _jsonFiles.Count; i++)
             {
-                _lastTargetAsset = _targetAsset;
-                RefreshJsonFiles();
+                int idx = i;
+                string label = Path.GetFileName(_jsonFiles[i]);
+                _dropdownFiles.menu.AppendAction(label, _ =>
+                {
+                    _selectedFileIndex   = idx;
+                    _dropdownFiles.text  = label;
+                });
             }
 
-            GUILayout.Space(10);
-            base.DrawEditor(index);
-            DrawJsonControls();
+            _dropdownFiles.text = _jsonFiles.Count > 0
+                ? Path.GetFileName(_jsonFiles[0])
+                : "Select file…";
         }
 
-        private void DrawTargetAssetSection()
+        private void RebuildFileListUI()
         {
-            SirenixEditorGUI.BeginBox("Target Asset");
-            _targetAsset = (ScriptableObject)SirenixEditorFields.UnityPreviewObjectField(
-                _targetAsset, typeof(ScriptableObject), true);
-            SirenixEditorGUI.EndBox();
-
-            if (_targetAsset == null) 
-                EditorGUILayout.HelpBox("Assign a ScriptableObject to export/import as JSON.", MessageType.Warning);
+            _containerFiles.Clear();
+            foreach (var filePath in _jsonFiles)
+                _containerFiles.Add(BuildFileRow(filePath));
         }
 
-        private void DrawJsonControls()
-        {
-            SirenixEditorGUI.BeginBox("Save / Load JSON");
-
-            GUI.backgroundColor = new Color(0.4f, 1f, 0.4f);
-            if (GUILayout.Button("Save New JSON", GUILayout.Height(30))) 
-                SaveNewJson();
-
-            GUI.backgroundColor = Color.white;
-            GUILayout.Space(10);
-
-            if (_jsonFiles.Count > 0)
-            {
-                GUILayout.BeginHorizontal();
-
-                GUI.backgroundColor = new Color(1f, 0.85f, 0.3f);
-                GUILayoutOption[] options = { GUILayout.Width(position.width * 0.4f), GUILayout.Height(30) };
-                if (GUILayout.Button("Overwrite Selected", options)) 
-                    OverwriteJsonFile(_jsonFiles[_selectedFileIndex]);
-
-                GUI.backgroundColor = Color.white;
-                _selectedFileIndex = EditorGUILayout
-                    .Popup(_selectedFileIndex, _jsonFiles.Select(Path.GetFileName)
-                    .ToArray());
-
-                GUILayout.EndHorizontal();
-            }
-
-            GUIStyle centerStyle = new GUIStyle(EditorStyles.label) { alignment = TextAnchor.MiddleCenter };
-            EditorGUILayout.LabelField("All Files", centerStyle);
-
-            foreach (var filePath in _jsonFiles) 
-                DrawJsonFileEntry(filePath);
-
-            SirenixEditorGUI.EndBox();
-        }
-
-        private void OverwriteJsonFile(string path)
-        {
-            try
-            {
-                string json = JsonUtility.ToJson(_targetAsset, true);
-                File.WriteAllText(path, json);
-                Debug.Log($"Overwrote JSON: {path}");
-                RefreshJsonFiles();
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Failed to overwrite JSON: {e}");
-            }
-        }
-
-        private void DrawJsonFileEntry(string filePath)
+        private VisualElement BuildFileRow(string filePath)
         {
             string fileName = Path.GetFileName(filePath);
-            EditorGUILayout.BeginHorizontal();
 
-            GUI.backgroundColor = new Color(0.4f, 1f, 0.4f);
-            if (GUILayout.Button("Load", GUILayout.Width(position.width * 0.3f))) 
-                LoadJsonToTarget(filePath);
+            var row = new VisualElement();
+            row.AddToClassList("file-row");
 
-            GUI.backgroundColor = Color.white;
-            GUILayout.Label(fileName, GUILayout.ExpandWidth(true));
+            var btnLoad = new Button(() => LoadJsonToTarget(filePath)) { text = "Load" };
+            btnLoad.AddToClassList("btn-load");
 
-            GUI.backgroundColor = new Color(1f, 0.4f, 0.4f);
-            if (GUILayout.Button("Delete", GUILayout.Width(200)))
+            var label = new Label(fileName);
+            label.AddToClassList("file-label");
+
+            var btnDelete = new Button(() =>
             {
                 DeleteJsonFile(filePath);
-                return;
-            }
+                RefreshJsonFiles();
+                RebuildFileListUI();
+            }) { text = "Delete" };
+            btnDelete.AddToClassList("btn-delete");
 
-            GUI.backgroundColor = Color.white;
-            EditorGUILayout.EndHorizontal();
+            row.Add(btnLoad);
+            row.Add(label);
+            row.Add(btnDelete);
+            return row;
         }
 
         private void SaveNewJson()
         {
+            if (_targetAsset == null) return;
             try
             {
-                string json = JsonUtility.ToJson(_targetAsset, true);
-                string path = GenerateJsonPath();
-                File.WriteAllText(path, json);
+                string path = Path.Combine(SaveFolderPath,
+                    $"{_targetAsset.name}_{DateTime.Now:yyyyMMdd_HHmmss}.json");
+                File.WriteAllText(path, JsonUtility.ToJson(_targetAsset, true));
                 Debug.Log($"Saved JSON to: {path}");
                 RefreshJsonFiles();
+                RebuildFileListUI();
             }
-            catch (Exception e)
+            catch (Exception e) { Debug.LogError($"Failed to save JSON: {e}"); }
+        }
+
+        private void OverwriteSelectedJson()
+        {
+            if (_targetAsset == null || _jsonFiles.Count == 0) return;
+            try
             {
-                Debug.LogError($"Failed to save JSON: {e}");
+                string path = _jsonFiles[_selectedFileIndex];
+                File.WriteAllText(path, JsonUtility.ToJson(_targetAsset, true));
+                Debug.Log($"Overwrote JSON: {path}");
+                RefreshJsonFiles();
+                RebuildFileListUI();
             }
+            catch (Exception e) { Debug.LogError($"Failed to overwrite JSON: {e}"); }
         }
 
         private void LoadJsonToTarget(string path)
         {
+            if (_targetAsset == null) return;
             try
             {
-                string json = File.ReadAllText(path);
-                JsonUtility.FromJsonOverwrite(json, _targetAsset);
+                JsonUtility.FromJsonOverwrite(File.ReadAllText(path), _targetAsset);
                 EditorUtility.SetDirty(_targetAsset);
                 AssetDatabase.SaveAssets();
                 Debug.Log($"Loaded JSON from: {Path.GetFileName(path)}");
             }
-            catch (Exception e)
-            {
-                Debug.LogError($"Failed to load JSON: {e}");
-            }
+            catch (Exception e) { Debug.LogError($"Failed to load JSON: {e}"); }
         }
 
         private void DeleteJsonFile(string path)
@@ -186,21 +208,9 @@ namespace Code.Editor.Save
             try
             {
                 File.Delete(path);
-                Debug.Log($"Deleted file: {Path.GetFileName(path)}");
-                RefreshJsonFiles();
+                Debug.Log($"Deleted: {Path.GetFileName(path)}");
             }
-            catch (Exception e)
-            {
-                Debug.LogError($"Failed to delete JSON: {e}");
-            }
-        }
-
-        private void RefreshJsonFiles()
-        {
-            _jsonFiles = Directory
-                .GetFiles(SaveFolderPath, "*.json")
-                .Where(path => _targetAsset != null && Path.GetFileName(path).StartsWith(_targetAsset.name))
-                .ToList();
+            catch (Exception e) { Debug.LogError($"Failed to delete JSON: {e}"); }
         }
     }
 }

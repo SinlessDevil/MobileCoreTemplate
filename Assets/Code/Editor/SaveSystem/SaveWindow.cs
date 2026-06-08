@@ -1,13 +1,11 @@
 #if UNITY_EDITOR
 using System;
 using System.IO;
-using System.Text;
 using Code.Services.PersistenceProgress.Player;
-using Sirenix.Serialization;
+using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using SerializationUtility = Sirenix.Serialization.SerializationUtility;
 
 namespace Code.Editor.Save
 {
@@ -127,10 +125,9 @@ namespace Code.Editor.Save
             {
                 try
                 {
-                    string base64 = PlayerPrefs.GetString(PlayerPrefsKey);
-                    byte[] bytes = Convert.FromBase64String(base64);
-                    var deserialized = SerializationUtility.DeserializeValue<PlayerData>(bytes, DataFormat.JSON);
-                    data = Encoding.UTF8.GetString(SerializationUtility.SerializeValue(deserialized, DataFormat.JSON));
+                    string raw = PlayerPrefs.GetString(PlayerPrefsKey);
+                    var obj  = JsonConvert.DeserializeObject<PlayerData>(raw);
+                    data     = JsonConvert.SerializeObject(obj, Formatting.Indented);
                 }
                 catch (Exception e)
                 {

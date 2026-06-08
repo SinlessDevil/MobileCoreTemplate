@@ -1,0 +1,97 @@
+.section {
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.section-title {
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+
+.asset-field {
+    margin-bottom: 6px;
+}
+
+.inspector-section {
+    margin-bottom: 12px;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.06);
+    border-radius: 3px;
+}
+
+/* Save New button — green */
+.btn-save {
+    height: 34px;
+    margin-bottom: 8px;
+    background-color: rgb(60, 165, 70);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -unity-font-style: bold;
+}
+.btn-save:hover { background-color: rgb(80, 190, 90); }
+
+/* Overwrite row */
+.overwrite-row {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.file-dropdown {
+    flex-grow: 1;
+    margin-right: 6px;
+    height: 30px;
+}
+
+.btn-overwrite {
+    height: 30px;
+    background-color: rgb(210, 160, 40);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -unity-font-style: bold;
+    min-width: 150px;
+}
+.btn-overwrite:hover { background-color: rgb(230, 180, 60); }
+
+/* File list */
+.files-header {
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    -unity-text-align: middle-center;
+}
+
+.file-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 0;
+    border-bottom-width: 1px;
+    border-color: rgba(128, 128, 128, 0.2);
+}
+
+.file-label {
+    flex-grow: 1;
+    font-size: 11px;
+}
+
+.btn-load {
+    height: 26px;
+    min-width: 70px;
+    background-color: rgb(60, 165, 70);
+    color: white;
+    border-radius: 3px;
+    margin-right: 4px;
+    -unity-font-style: bold;
+}
+.btn-load:hover { background-color: rgb(80, 190, 90); }
+
+.btn-delete {
+    height: 26px;
+    min-width: 70px;
+    background-color: rgb(200, 60, 60);
+    color: white;
+    border-radius: 3px;
+    -unity-font-style: bold;
+}
+.btn-delete:hover { background-color: rgb(220, 80, 80); }
+
+.hidden { display: none; }

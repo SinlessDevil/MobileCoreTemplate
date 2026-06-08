@@ -1,0 +1,34 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- Target Asset picker -->
+        <ui:VisualElement class="section">
+            <ui:Label text="Target Asset" class="section-title" />
+            <uie:ObjectField name="field-asset" label="ScriptableObject" class="asset-field" />
+            <ui:HelpBox name="helpbox-no-asset"
+                        text="Assign a ScriptableObject to export / import as JSON."
+                        message-type="Warning" />
+        </ui:VisualElement>
+
+        <!-- Inline inspector (filled at runtime) -->
+        <ui:VisualElement name="container-inspector" class="inspector-section" />
+
+        <!-- JSON Controls -->
+        <ui:Foldout name="foldout-json" text="Save / Load JSON" value="true" class="section">
+
+            <ui:Button name="btn-save-new" text="💾 Save New JSON" class="btn-save" />
+
+            <!-- Overwrite row (hidden until files exist) -->
+            <ui:VisualElement name="container-overwrite" class="overwrite-row hidden">
+                <uie:ToolbarMenu name="dropdown-files" text="Select file…" class="file-dropdown" />
+                <ui:Button name="btn-overwrite" text="Overwrite Selected" class="btn-overwrite" />
+            </ui:VisualElement>
+
+            <ui:Label text="All Files" class="files-header" />
+            <ui:VisualElement name="container-files" />
+
+        </ui:Foldout>
+
+    </ui:ScrollView>
+</ui:UXML>
