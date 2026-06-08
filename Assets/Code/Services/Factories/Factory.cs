@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+using Code.Services.AssetProvider;
+using Cysharp.Threading.Tasks;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -7,48 +9,45 @@ namespace Code.Services.Factories
     public abstract class Factory
     {
         private readonly IInstantiator _instantiator;
+        private readonly IAssetProvider _assetProvider;
 
-        protected Factory(IInstantiator instantiator)
+        protected Factory(IInstantiator instantiator, IAssetProvider assetProvider)
         {
             _instantiator = instantiator;
-        }
-        
-        protected GameObject Instantiate(string resourcePath)
-        {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath);
-            return MoveToCurrentScene(gameObject);
+            _assetProvider = assetProvider;
         }
 
-        protected GameObject Instantiate(string resourcePath, Transform parent)
+        protected async UniTask<GameObject> Instantiate(string address)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath, parent);
-            return MoveToCurrentScene(gameObject);
+            GameObject prefab = await _assetProvider.Load<GameObject>(address);
+            return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab));
         }
 
-        protected GameObject Instantiate(string resourcePath, Transform parent, bool isCanvas)
+        protected async UniTask<GameObject> Instantiate(string address, Transform parent)
         {
-            if(isCanvas)
-            {
-                return _instantiator.InstantiatePrefabResource(resourcePath, parent);
-            }
-            
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath, parent);
-            return MoveToCurrentScene(gameObject);
+            GameObject prefab = await _assetProvider.Load<GameObject>(address);
+            return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab, parent));
         }
-        
-        protected GameObject Instantiate(string resourcePath, Vector3 position, Quaternion rotation, Transform parent)
+
+        protected async UniTask<GameObject> Instantiate(string address, Transform parent, bool isCanvas)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefabResource(resourcePath, position, rotation, parent);
-            return MoveToCurrentScene(gameObject);
+            GameObject prefab = await _assetProvider.Load<GameObject>(address);
+            GameObject instance = _instantiator.InstantiatePrefab(prefab, parent);
+            return isCanvas ? instance : MoveToCurrentScene(instance);
+        }
+
+        protected async UniTask<GameObject> Instantiate(string address, Vector3 position, Quaternion rotation, Transform parent)
+        {
+            GameObject prefab = await _assetProvider.Load<GameObject>(address);
+            return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab, position, rotation, parent));
         }
 
         protected GameObject Instantiate(GameObject prefab)
         {
-            GameObject gameObject = _instantiator.InstantiatePrefab(prefab);
-            return MoveToCurrentScene(gameObject);
+            return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab));
         }
 
-        protected GameObject Instantiate(GameObject prefab, Transform parent) => 
+        protected GameObject Instantiate(GameObject prefab, Transform parent) =>
             _instantiator.InstantiatePrefab(prefab, parent);
 
         private GameObject MoveToCurrentScene(GameObject gameObject)

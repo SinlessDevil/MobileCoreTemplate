@@ -9,5 +9,6 @@ namespace Code.Services.PersistenceProgress.Player
         public PlayerSettings PlayerSettings = new();
         public PlayerTutorialData PlayerTutorialData = new();
         public PlayerResources PlayerResources = new();
+        public LoadingData Loading = new();
     }
 }

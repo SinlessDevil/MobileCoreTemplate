@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -34,6 +35,14 @@ namespace Code.Infrastructure
         {
             StartCoroutine(AnimationOpen());
             StartLoadingTextAnimation();
+        }
+
+        public void ShowProgress(float progress)
+        {
+        }
+
+        public void ShowNoInternetWarning(Action onContinueClick)
+        {
         }
 
         private IEnumerator AnimationOpen()
