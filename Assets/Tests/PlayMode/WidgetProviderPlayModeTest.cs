@@ -3,6 +3,7 @@ using Code.Infrastructure.StateMachine;
 using Code.Infrastructure.StateMachine.Game.States;
 using Code.Services.Providers.Widgets;
 using Code.UI;
+using Cysharp.Threading.Tasks;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -48,8 +49,10 @@ namespace Tests.PlayMode
         public IEnumerator Should_Reuse_Play_Animation_Widget()
         {
             yield return new WaitForSeconds(5f);
-            
-            Widget first = _provider.GetWidget(Vector3.zero, Quaternion.identity);
+
+            var firstTask = _provider.GetWidget(Vector3.zero, Quaternion.identity).AsTask();
+            yield return new WaitUntil(() => firstTask.IsCompleted);
+            Widget first = firstTask.Result;
             first.SetText("Test");
             first.SetColor(Color.red);
             first.PlayAnimation();
@@ -57,7 +60,9 @@ namespace Tests.PlayMode
 
             yield return new WaitForSeconds(1f);
 
-            Widget reused = _provider.GetWidget(Vector3.right, Quaternion.identity);
+            var reusedTask = _provider.GetWidget(Vector3.right, Quaternion.identity).AsTask();
+            yield return new WaitUntil(() => reusedTask.IsCompleted);
+            Widget reused = reusedTask.Result;
             reused.SetText("Test_1");
             reused.SetColor(Color.gray);
             reused.PlayAnimation();
