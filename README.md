@@ -200,7 +200,3 @@ Progress is accessed through `IPersistenceProgressService` and persisted via `IS
 | UI Particle (Coffee) | UPM | Particle effects on UI canvas |
 
 ---
-
-## License
-
-MIT
