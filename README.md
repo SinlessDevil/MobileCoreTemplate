@@ -1,67 +1,206 @@
-# 🧩 Unity Zenject Template
+# ZenMobile — Unity Mobile Game Template
 
-A clean, modular Unity template built on [Zenject](https://github.com/modesttree/Zenject), designed for scalable game projects. Includes core services, state machine, tool integrations, URP setup, and a full test suite.
-### ✨ Features
-- **🧠 State Machine (Game Flow)** — `Bootstrap → Load → Menu → Game → Win/Lose`  
-- **🏗️ Factory Services** — UI, Game, Widget, and Scene instantiation  
-- **📊 Static Data System** — Loadable config data for sounds, levels, etc.  
-- **📦 Save System Toolkit** — PlayerPrefs / JSON / XML + Editor tool  
-- **🔊 Audio & Vibration Kit** — Music, 2D/3D sounds, haptics with pooling  
-- **🧪 Built-in Test ToolKit** — Scene/prefab/enum/guid validation  
-- **🎨 URP + Toony Colors Pro** — Stylized rendering preset  
-- **🐞 SRDebugger** — Integrated in-game debug UI  
-- **📁 Modular Structure** — Clean separation into Code, Plugins, Tests, Resources
+A production-ready Unity template for mobile games (Android / iOS) built on Zenject dependency injection and Unity Addressables. Provides a complete infrastructure layer so development can begin from game logic rather than boilerplate.
 
-### 🧪 Test Coverage
-**EditMode:**
-- `GuidDuplicationTest` — detects duplicate `.meta` GUIDs  
-- `ResourcesPrefabValidationTests` — checks for missing scripts in `Resources` prefabs  
-- `SceneValidationTests` — verifies scenes for:
-  - missing scripts  
-  - missing prefab links  
-  - null fields on serializable components  
-- `Enum Tests` — ensures enum-to-data mapping is valid  
-- `LevelService Tests` — validates level selection and local progress logic  
-- `StorageService Tests` — checks key-value consistency  
+---
 
-**PlayMode:**
-- `WidgetProvider Tests` — tests prefab resolution and instantiation
+## Requirements
 
-### 📦 Included Tools
-- [🔧 CI GitHub Action](https://github.com/SinlessDevil/CI)
-- [💾 SaveSystemToolkit](https://github.com/SinlessDevil/SaveSystemToolkit)
-- [🎵 AudioVibrationKit](https://github.com/SinlessDevil/AudioVibrationKit)
-- [🧪 TestToolKit](https://github.com/SinlessDevil/TestToolKit)
+| Requirement | Version |
+|---|---|
+| Unity | 2022.3 LTS or newer |
+| Target platforms | Android, iOS |
+| Render pipeline | URP |
+| .NET | Standard 2.1 |
 
-### ✅ Entry Point
-The `BootstrapInstaller` (via `Zenject`) wires up:
-- Core services (UI, Level, SaveLoad, Storage, Audio)
-- Game StateMachine & States
-- Static Data loaders
-- Coroutine runner and loading curtain
+---
 
-### 📏 Architecture Overview
-The project is structured with a modular architecture, using **Zenject** as the Dependency Injection framework. It is designed to support mid-core and hybrid-casual projects out of the box. Below is an overview of the core systems and services:
+## Architecture
 
-### 📆 Core Components
-* **🌀 Game State Machine**
-  A flexible state machine with separate classes for each game state:
-  * `BootstrapState`, `LoadProgressState`, `LoadMenuState`, `LoadLevelState`, `GameLoopState`, etc.
-* **🏠 Game/UI Factories**
-  Centralized services for creating gameplay entities and UI windows.
-* **📁 Static Data System**
-  Configurable data loading system using ScriptableObjects. Includes support for gameplay configuration and audio/vibration settings.
-* **🧠 Services Layer**
-  Decoupled services for all game-related logic:
-  * **Level Management** (LevelService)
-  * **Save/Load Progress** (UnifiedSaveLoadFacade)
-  * **UI & Windows** (WindowService)
-  * **Input Handling** (InputService)
-  * **Random Generator** (RandomService)
-  * **Time Management** (TimeService)
-  * **Widget System** (WidgetProvider)
-  * **Storage Logic** (StorageService)
-* **🎮 Win/Lose System**
-  Includes `WinService` and `LoseService` for handling end-of-level logic.
-* **🚪 Coroutine and Loading Curtain**
-  Mono-based services used for async logic and visual transitions.
+The project follows a layered architecture with strict dependency direction: Infrastructure → Services → Game Logic.
+
+```
+Infrastructure
+  BootstrapInstaller        — Zenject root composition, service registration
+  StateMachine              — Game flow controller (Bootstrap → Menu → Level → GameLoop)
+  SceneLoader               — Async scene transitions via Addressables
+  LoadingCurtain            — Visual transition overlay
+
+Services
+  AssetProvider             — Addressables asset cache (temp + persistence)
+  AssetPreloaderService     — Bundle download size check and dependency preload
+  AssetPreloaderConductor   — Background preload scheduling by player level
+  UIFactory / GameFactory   — Prefab instantiation via Zenject IInstantiator
+  WindowService             — Window lifecycle via AssetReference
+  StaticDataService         — ScriptableObject config loader
+  SaveLoadFacade            — Unified save/load (PlayerPrefs / JSON / XML)
+  LevelService              — Level progression and completion
+  TimeService               — Pause, resume, elapsed time
+  SoundService              — 2D/3D audio with pooling
+  VibrationService          — Haptic feedback
+  WidgetProvider            — UI widget pooling
+  RandomService             — Seeded random utility
+  InputService              — Input abstraction
+```
+
+---
+
+## Game Flow
+
+```
+BootstrapState
+  └─ LoadProgressState       (load save, version check)
+       └─ LoadMenuState      (clean asset cache, load Menu scene, setup UI)
+            └─ LoadLevelState (clean asset cache, load Game scene, setup HUD)
+                 └─ GameLoopState
+                      ├─ WinState
+                      └─ LoseState
+```
+
+State transitions are handled through `IStateMachine<IGameState>`. Each state is injected via Zenject — no service locator, no static references.
+
+---
+
+## Asset Management
+
+### AssetProvider
+
+Central Addressables cache with two independent stores:
+
+| Cache | Cleared by | Use case |
+|---|---|---|
+| Temp (`_completedHandles`) | `CleanUp()` on scene change | Scene-specific assets: HUD, windows, level objects |
+| Persistence (`_completedPersistenceHandles`) | Never | Assets needed across all scenes |
+
+Loading an asset that is already cached returns immediately without an Addressables request.
+
+### Scene Lifecycle
+
+`SceneLoader` stores the handle of the currently loaded Addressable scene. Before each new scene load, the previous handle is released via `Addressables.UnloadSceneAsync()`. This prevents handle accumulation across scene transitions.
+
+### Window System
+
+`WindowConfig` stores an `AssetReferenceGameObject` per window type. Windows are loaded on demand through `AssetProvider` (temp cache) and released automatically when `CleanUp()` is called on scene transition. No window prefab is loaded until the window is first opened.
+
+---
+
+## Project Structure
+
+```
+Assets/
+  Code/
+    Infrastructure/         — State machine, SceneLoader, LoadingCurtain, Installers
+    Services/
+      AssetProvider/        — IAssetProvider, AssetProvider
+      AssetPreloader/       — IAssetPreloaderService, AssetPreloaderService
+      PreloaderConductor/   — AssetPreloaderConductor
+      Factories/            — Factory base, UIFactory, GameFactory
+      StaticData/           — IStaticDataService, StaticDataService
+      PersistenceProgress/  — PlayerData, LoadingData, progress models
+      SaveLoad/             — ISaveLoadFacade, PlayerPrefs/JSON/XML backends
+      Levels/               — LevelService
+      Window/               — IWindowService, WindowService
+      Providers/Widgets/    — WidgetProvider, widget pooling
+      Finish/               — WinService, LoseService
+    StaticData/             — ScriptableObject definitions (configs, window configs)
+    UI/                     — HUD, Menu, Window prefab scripts
+  Resources/
+    StaticData/             — ScriptableObject assets (loaded synchronously at boot)
+  Tests/
+    EditMode/               — Structural validation tests
+    PlayMode/               — Runtime integration tests
+```
+
+---
+
+## Addressables Setup
+
+All runtime-loaded assets are organized into Addressable groups:
+
+| Group | Contents |
+|---|---|
+| `Hud` | GameHud, MenuHud, LoadingCurtain |
+| `UI` | UiRoot, Widget, ItemLevel, window prefabs |
+| `Game` | Game scene |
+| `Menu` | Menu scene |
+
+Only the `Initial` scene is listed in Build Settings. All other scenes are loaded via `Addressables.LoadSceneAsync()`.
+
+To iterate without rebuilding bundles, set Addressables **Play Mode Script** to `Use Asset Database` in the Addressables Groups window.
+
+---
+
+## Getting Started
+
+1. Clone the repository
+2. Open in Unity 2022.3 LTS or newer
+3. Open `Assets/Scenes/Initial.unity`
+4. In the Addressables Groups window (Window → Asset Management → Addressables → Groups), build local content: **Build → New Build → Default Build Script**
+5. Enter Play Mode
+
+---
+
+## Static Data Configuration
+
+ScriptableObject assets are loaded from `Resources/StaticData/` at startup via `StaticDataService`. Key configs:
+
+| Asset | Path | Purpose |
+|---|---|---|
+| `GameConfig` | `StaticData/Balance/GameConfig` | Core game parameters |
+| `Balance` | `StaticData/Balance/Balance` | Numeric balance values |
+| `WindowsStaticData` | `StaticData/WindowsStaticData` | Window type → AssetReference mapping |
+| `Chapters` | `StaticData/Chapters` | Level chapter definitions |
+| `PreloadConfig` | `StaticData/PreloadConfig` | CDN group preload schedule by player level |
+
+---
+
+## Save System
+
+Three backends, selected per call via `SaveMethod` enum:
+
+| Backend | Class | Use case |
+|---|---|---|
+| PlayerPrefs | `PlayerPrefsStrategy` | Lightweight progress, settings |
+| JSON | `JsonStrategy` | Complex serializable data |
+| XML | `XmlStrategy` | Human-readable exports |
+
+Progress is accessed through `IPersistenceProgressService` and persisted via `ISaveLoadFacade`.
+
+---
+
+## Testing
+
+### EditMode
+
+| Test class | What it validates |
+|---|---|
+| `GuidDuplicationTest` | No duplicate `.meta` GUIDs in the project |
+| `ResourcesPrefabValidationTests` | No missing scripts on prefabs in `Resources/` |
+| `SceneValidationTests` | No missing scripts, prefab links, or null serialized fields in scenes |
+| `LevelService Tests` | Level selection and local progress logic |
+| `StorageService Tests` | Key-value storage consistency |
+
+### PlayMode
+
+| Test class | What it validates |
+|---|---|
+| `WidgetProviderPlayModeTest` | Widget pool reuse — same instance returned after release |
+
+---
+
+## Third-Party Dependencies
+
+| Package | Source | Purpose |
+|---|---|---|
+| Zenject | UPM | Dependency injection |
+| UniTask | UPM | Zero-allocation async/await |
+| Unity Addressables | UPM | Asset and scene loading |
+| TextMeshPro | UPM | UI text rendering |
+| SRDebugger | Assets/Plugins | In-game debug console |
+| UI Particle (Coffee) | UPM | Particle effects on UI canvas |
+
+---
+
+## License
+
+MIT
