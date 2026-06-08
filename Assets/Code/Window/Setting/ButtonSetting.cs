@@ -1,6 +1,7 @@
 using Code.Services.AudioVibrationFX.Sound;
 using Code.Services.Timer;
 using Code.Services.Window;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -35,10 +36,13 @@ namespace Code.Window.Setting
         {
             _soundService.PlaySound(Sound2DType.Click);
             _timeService.Pause();
+            OpenPauseWindowAsync().Forget();
+        }
 
-            var prefab = _windowService.Open(WindowTypeId.Setting);
+        private async UniTaskVoid OpenPauseWindowAsync()
+        {
+            var prefab = await _windowService.Open(WindowTypeId.Setting);
             _settingWindow = prefab.GetComponent<SettingWindow>();
-            
             _settingWindow.UpdateWindow();
             _settingWindow.ResetButtonScale();
         }

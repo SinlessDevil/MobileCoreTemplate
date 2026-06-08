@@ -14,7 +14,7 @@ namespace Code.Services.Factories.UIFactory
         MenuHud MenuHud { get; }
 
         UniTask CreateUiRoot();
-        RectTransform CrateWindow(WindowTypeId windowTypeId);
+        UniTask<RectTransform> CreateWindow(WindowTypeId windowTypeId);
         UniTask<GameHud> CreateGameHud();
         UniTask<MenuHud> CreateMenuHud();
         UniTask<Widget> CreateWidget(Vector3 position, Quaternion rotation);

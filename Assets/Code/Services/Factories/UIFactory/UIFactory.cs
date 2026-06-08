@@ -34,10 +34,10 @@ namespace Code.Services.Factories.UIFactory
             _uiRoot = (await Instantiate(ResourcePath.UiRootPath)).transform;
         }
 
-        public RectTransform CrateWindow(WindowTypeId windowTypeId)
+        public async UniTask<RectTransform> CreateWindow(WindowTypeId windowTypeId)
         {
             WindowConfig config = _staticData.ForWindow(windowTypeId);
-            GameObject window = Instantiate(config.Prefab, _uiRoot);
+            GameObject window = await Instantiate(config.PrefabReference, _uiRoot);
             return window.GetComponent<RectTransform>();
         }
 

@@ -16,7 +16,37 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 59c8d9867148c3a4a85e54f7bc24e5fb
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 0ab6f9e4903173a4fa63b316cfa0be05
+    m_Address: UI/UiRoot
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 17e51a876bb26d646bcf32b57d6b782b
+    m_Address: UI/Widget
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a49ed249b904583438540d19acdc5c33
+    m_Address: UI/Windows/SettingWindow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c068641af1660c34599f7a5353201068
+    m_Address: UI/Windows/Finish/LoseWIndow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d66ec59c1b849364db472b1f30ff87af
+    m_Address: UI/Windows/Finish/WinWIndow
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 372c74e49714bc242b9d06238fb98268
+    m_Address: UI/Menu/ItemLevel
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 64b9d60129938374f95f06ee9743f1bc, type: 2}
   m_SchemaSet:

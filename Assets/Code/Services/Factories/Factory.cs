@@ -1,6 +1,7 @@
 using Code.Services.AssetProvider;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 using Zenject;
 
@@ -40,6 +41,12 @@ namespace Code.Services.Factories
         {
             GameObject prefab = await _assetProvider.Load<GameObject>(address);
             return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab, position, rotation, parent));
+        }
+
+        protected async UniTask<GameObject> Instantiate(AssetReference assetReference, Transform parent)
+        {
+            GameObject prefab = await _assetProvider.Load<GameObject>(assetReference);
+            return _instantiator.InstantiatePrefab(prefab, parent);
         }
 
         protected GameObject Instantiate(GameObject prefab)

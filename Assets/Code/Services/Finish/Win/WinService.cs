@@ -6,6 +6,7 @@ using Code.Services.Timer;
 using Code.Services.Window;
 using Code.Window;
 using Code.Window.Finish.Win;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Code.Services.Finish.Win
@@ -35,14 +36,15 @@ namespace Code.Services.Finish.Win
         public void Win()
         {
             CompleteLevel();
-            
             CompleteTutor();
-
             SetRecordText();
-            
             SaveProgress();
-            
-            RectTransform window = _windowService.Open(WindowTypeId.Win);
+            ShowWinWindowAsync().Forget();
+        }
+
+        private async UniTaskVoid ShowWinWindowAsync()
+        {
+            RectTransform window = await _windowService.Open(WindowTypeId.Win);
             WinWindow winWindow = window.GetComponent<WinWindow>();
             winWindow.Initialize();
         }
