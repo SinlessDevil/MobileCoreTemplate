@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- Existing Enum -->
+        <ui:Foldout name="foldout-enum" text="Existing Enum" value="false" class="section">
+            <ui:TextField name="tf-vibration-enum" label="Vibration Types" multiline="true" class="enum-preview" />
+        </ui:Foldout>
+
+        <!-- List injected at runtime via PropertyField -->
+        <ui:VisualElement name="container-vibrations" class="list-section" />
+
+        <ui:Button name="btn-generate" text="Generate Enum" class="btn-generate" />
+
+    </ui:ScrollView>
+</ui:UXML>

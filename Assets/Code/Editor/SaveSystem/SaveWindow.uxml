@@ -1,0 +1,42 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- ===== PlayerPrefs Section ===== -->
+        <ui:Foldout name="foldout-prefs" text="PlayerPrefs Preview" value="true" class="save-section">
+            <ui:Label text="Save Location" class="section-title" />
+            <ui:HelpBox name="helpbox-prefs-path" message-type="Info" />
+            <ui:ScrollView name="scroll-prefs" class="data-scroll">
+                <ui:Label name="label-prefs-data" class="data-label" />
+            </ui:ScrollView>
+            <ui:HelpBox name="helpbox-prefs-msg" message-type="Warning" class="hidden" />
+            <ui:Button name="btn-refresh-prefs" text="🔄 Refresh" class="btn-refresh" />
+            <ui:Button name="btn-delete-prefs" text="🗑 Delete" class="btn-delete" />
+        </ui:Foldout>
+
+        <!-- ===== JSON Section ===== -->
+        <ui:Foldout name="foldout-json" text="JSON File Preview" value="true" class="save-section">
+            <ui:Label text="Save Location" class="section-title" />
+            <ui:HelpBox name="helpbox-json-path" message-type="Info" />
+            <ui:ScrollView name="scroll-json" class="data-scroll">
+                <ui:Label name="label-json-data" class="data-label" />
+            </ui:ScrollView>
+            <ui:HelpBox name="helpbox-json-msg" message-type="Warning" class="hidden" />
+            <ui:Button name="btn-refresh-json" text="🔄 Refresh" class="btn-refresh" />
+            <ui:Button name="btn-delete-json" text="🗑 Delete" class="btn-delete" />
+        </ui:Foldout>
+
+        <!-- ===== XML Section ===== -->
+        <ui:Foldout name="foldout-xml" text="XML File Preview" value="true" class="save-section">
+            <ui:Label text="Save Location" class="section-title" />
+            <ui:HelpBox name="helpbox-xml-path" message-type="Info" />
+            <ui:ScrollView name="scroll-xml" class="data-scroll">
+                <ui:Label name="label-xml-data" class="data-label" />
+            </ui:ScrollView>
+            <ui:HelpBox name="helpbox-xml-msg" message-type="Warning" class="hidden" />
+            <ui:Button name="btn-refresh-xml" text="🔄 Refresh" class="btn-refresh" />
+            <ui:Button name="btn-delete-xml" text="🗑 Delete" class="btn-delete" />
+        </ui:Foldout>
+
+    </ui:ScrollView>
+</ui:UXML>

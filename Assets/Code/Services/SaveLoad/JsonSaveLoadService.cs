@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using Code.Services.PersistenceProgress;
 using Code.Services.PersistenceProgress.Player;
-using Sirenix.Serialization;
+using Newtonsoft.Json;
 using UnityEngine;
 
 namespace Code.Services.SaveLoad
@@ -25,9 +25,8 @@ namespace Code.Services.SaveLoad
         {
             try
             {
-                byte[] data = SerializationUtility.SerializeValue(playerData, DataFormat.JSON);
-                File.WriteAllBytes(FilePath, data);
-
+                string json = JsonConvert.SerializeObject(playerData, Formatting.Indented);
+                File.WriteAllText(FilePath, json);
                 Debug.Log($"JSON Save complete at: {FilePath}");
             }
             catch (Exception e)
@@ -46,8 +45,8 @@ namespace Code.Services.SaveLoad
                     return null;
                 }
 
-                byte[] data = File.ReadAllBytes(FilePath);
-                return SerializationUtility.DeserializeValue<PlayerData>(data, DataFormat.JSON);
+                string json = File.ReadAllText(FilePath);
+                return JsonConvert.DeserializeObject<PlayerData>(json);
             }
             catch (Exception e)
             {

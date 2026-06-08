@@ -1,11 +1,1051 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ddce9075-1956-465c-acec-9915ea86ade5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Vibration/VibrationsData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Vibration/VibrationsData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/UiRoot.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/UiRoot.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+    <list default="true" id="ddce9075-1956-465c-acec-9915ea86ade5" name="Changes" comment="l">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ZenjectTemplate/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ZenjectTemplate/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Editor/GameEditor.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Editor/GameEditor.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Game.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Game.asmdef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Infrastructure/LoadingCurtain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Infrastructure/LoadingCurtain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Menu/Windows/Map/ItemLevel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Menu/Windows/Map/ItemLevel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Menu/Windows/Map/MapWindow.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Menu/Windows/Map/MapWindow.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/UI/Widget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/UI/Widget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Huds/GameHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Huds/GameHud.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Huds/LoadingCurtain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Huds/LoadingCurtain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Huds/MenuHud.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Huds/MenuHud.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/StaticData/Sounds/Sounds.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/StaticData/Sounds/Sounds.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Menu/ItemLevel.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Menu/ItemLevel.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Widget.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Widget.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/BonusWIndow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/BonusWIndow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/LoseWIndow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/LoseWIndow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/WinWIndow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Windows/Finish/WinWIndow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Windows/SettingWindow.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/Windows/SettingWindow.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Initial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Initial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/Android.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/Android/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/Android/AndroidManifest.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/MMNViOSHapticsInterface.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/MMNViOSHapticsInterface.m.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/MMNViOSCoreHapticsInterface.mm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/MMNViOSCoreHapticsInterface.mm.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/MMNViOSCoreHapticsInterface.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/MMNViOSCoreHapticsInterface.swift.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/UnitySwift-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/UnitySwift-Bridging-Header.h.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/module.modulemap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Plugins/iOS/Swift/module.modulemap.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Resources/MMNVPathDefinition.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Resources/MMNVPathDefinition.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/DefineSymbols.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/DefineSymbols/NiceVibrationsDefineSymbols.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/DefineSymbols/NiceVibrationsDefineSymbols.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVAndroidWaveFormAssetEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVAndroidWaveFormAssetEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVAssetPostProcessor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVAssetPostProcessor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVBuildPostProcessor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVRumbleWaveFormAssetEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MMNVRumbleWaveFormAssetEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MoreMountains.NiceVibrations.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Editor/MoreMountains.NiceVibrations.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAHAP.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAHAP.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAltThread.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAltThread.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAndroid.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAndroid.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAndroidWaveFormAsset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVAndroidWaveFormAsset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVEnumCondition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVEnumCondition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVHapticTypes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVHapticTypes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVInspectorButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVInspectorButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVPlatform.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVPlatform.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVRumbleWaveFormAsset.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNVRumbleWaveFormAsset.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNViOS.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNViOS.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNViOSCoreHaptics.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MMNViOSCoreHaptics.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MoreMountains.NiceVibrations.Haptics.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Haptics/MoreMountains.NiceVibrations.Haptics.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMNVPath.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMNVPath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMVibrationManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMVibrationManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMVibrationManagerTester.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MMVibrationManagerTester.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MoreMountains.NiceVibrations.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/NiceVibrations/MoreMountains.NiceVibrations.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor/DefineSymbols.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor/DefineSymbols/NiceVibrationsRumbleDefineSymbols.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor/DefineSymbols/NiceVibrationsRumbleDefineSymbols.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor/MoreMountains.NiceVibrations.Rumble.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Editor/MoreMountains.NiceVibrations.Rumble.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Scripts/MMNVRumble.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Scripts/MMNVRumble.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Scripts/MoreMountains.NiceVibrations.Rumble.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Scripts/Rumble/Scripts/MoreMountains.NiceVibrations.Rumble.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Sounds/NiceVibrationsContinuous.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Sounds/NiceVibrationsContinuous.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Sounds/NiceVibrationsTransient.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Common/Sounds/NiceVibrationsTransient.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVBoing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVBoing.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVDrums.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVDrums.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVGravel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVGravel.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVHeartbeats.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVHeartbeats.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVInflate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVInflate.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVOscillate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVOscillate.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVRumble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVRumble.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVSparkle.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack1/NVSparkle.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVCaptainAHAP.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVCaptainAHAP.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVCarillon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVCarillon.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVDice.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVDice.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVDrumsLoop.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVDrumsLoop.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVGameOver.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVGameOver.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVHeartbeats.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVHeartbeats.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVLaser.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVLaser.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVPowerOff.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVPowerOff.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVReload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVReload.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVTeleport.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AHAP/AHAPPack2/NVTeleport.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVCarillon.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVCarillon.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVDice.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVDice.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVDrumsLoop.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVDrumsLoop.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVGameOver.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVGameOver.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVHeartbeats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVHeartbeats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVLaser.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVLaser.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVPowerOff.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVPowerOff.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVReload.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVReload.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVTeleport.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/AndroidWaveforms/NVTeleport.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRCarillon.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRCarillon.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRDice.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRDice.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRDrumsLoop.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRDrumsLoop.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRGameOver.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRGameOver.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRHeartbeats.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRHeartbeats.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRLaser.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRLaser.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRPowerOff.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRPowerOff.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRReload.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRReload.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRTeleport.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/RumbleWaveforms/NVRTeleport.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts/PresetDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts/PresetDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts/PresetDemoRotator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Scripts/PresetDemoRotator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVCarillon.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVCarillon.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVDice.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVDice.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVDrumsLoop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVDrumsLoop.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVGameOver.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVGameOver.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVHeartbeats.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVHeartbeats.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVLaser.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVLaser.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVPowerOff.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVPowerOff.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVReload.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVReload.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVTeleport.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sounds/NVTeleport.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sprites/NVPresetsIcons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/AHAPPresetsDemo/Sprites/NVPresetsIcons.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/HitAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/HitAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/IdleAnimation.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/IdleAnimation.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/NVBallAnimatorController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/NVBallAnimatorController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Physics2DMaterials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Physics2DMaterials/NVBouncy.physicsMaterial2D" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Physics2DMaterials/NVBouncy.physicsMaterial2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoBall.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoBall.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoWall.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallDemoWall.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallPusher.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallPusher.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallTouchZone.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Scripts/BallTouchZone.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBall.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBall.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBallParticle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBallParticle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBallParticle.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/BallDemo/Sprites/NVBallParticle.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts/CarDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts/CarDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts/PowerBarElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Scripts/PowerBarElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sounds/NVCarEngine.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sounds/NVCarEngine.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites/NVCar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites/NVCar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites/NVCarWheel.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/CarDemo/Sprites/NVCarWheel.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/ContinuousDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/ContinuousDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/ContinuousDemo/Scripts/ContinuousHapticsDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/ContinuousDemo/Scripts/ContinuousHapticsDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/RegularPresetsDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/RegularPresetsDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/Sprites/RegularPresetsIcons.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/RegularPresetsDemo/Sprites/RegularPresetsIcons.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/TransientDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/TransientDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/TransientDemo/Scripts/TransientHapticsDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/TransientDemo/Scripts/TransientHapticsDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/AHAP.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/AHAP/NVSpring.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/AHAP/NVSpring.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleButtonAnimator.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleButtonAnimator.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleIdle.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleIdle.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleSpark.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Animations/WobbleSpark.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Prefabs/WobbleButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Prefabs/WobbleButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts/WobbleButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts/WobbleButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts/WobbleDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Scripts/WobbleDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Sounds.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Sounds/Spring.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/DemoAssets/WobbleDemo/Sounds/Spring.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/MoreMountains.NiceVibrations.Demos.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/MoreMountains.NiceVibrations.Demos.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/NiceVibrationsDemo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/NiceVibrationsDemo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/BIG JOHN.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/BIG JOHN.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Bold.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Light.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Medium.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Fonts/RobotoMono-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/HorizontalSliderComponent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/HorizontalSliderComponent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/PaginationDot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/PaginationDot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/VerticalProgressBar.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/VerticalProgressBar.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/VerticalSliderComponent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Prefabs/VerticalSliderComponent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/DemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/DemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/NiceVibrationsDemoHelpers.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/NiceVibrationsDemoHelpers.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/SoundSwitch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/SoundSwitch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/HapticCurve.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/HapticCurve.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMFPSCounter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMFPSCounter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMFPSUnlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMFPSUnlock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMKnob.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMKnob.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMProgressBar.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMProgressBar.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSignal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSignal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSpriteReplace.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSpriteReplace.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSwitch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMSwitch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMTouchButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMTouchButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMUIShaker.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/MMUIShaker.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/Pagination.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/UI/Pagination.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/V2DemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/V2DemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/VersionNumber.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Scripts/VersionNumber.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/CurveMaterial.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/CurveMaterial.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/MaskedUI.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/MaskedUI.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/MaskedUI.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Shaders/MaskedUI.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV1x1White.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV1x1White.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV3Cols.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV3Cols.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV3Dots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV3Dots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV7Dots.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NV7Dots.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVArrow.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVDottedPattern.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVDottedPattern.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVKnob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVKnob.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVLogoNice.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVLogoNice.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVLogoVibrations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVLogoVibrations.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVPaginationDot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVPaginationDot.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVRoundedCorners.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVRoundedCorners.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVRoundedCornersBig.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVRoundedCornersBig.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchBackground.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchIndicator.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchIndicator.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchKnob.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVSwitchKnob.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVVerticalProgressBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_Common/Sprites/NVVerticalProgressBar.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Scripts/NiceVibrationsDemoManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Scripts/NiceVibrationsDemoManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/DemoBackground.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/DemoBackground.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/MoreMountainsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/MoreMountainsLogo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/NiceVibrationsIcon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/NiceVibrationsIcon.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/NiceVibrationsLogo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/NiceVibrationsLogo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/RoundedCorners10Stroke5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/RoundedCorners10Stroke5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/icon-nice-vibrations.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/Sprites/icon-nice-vibrations.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/v1Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/Demos/_OLD/v1Demo/v1Demo.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/license.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/license.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/readme.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/NiceVibrations/readme.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/BG_Dark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/BG_Dark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/BG_Light.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/BG_Light.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/DemoSprite.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/DemoSprite.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/console-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/console-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/options-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/options-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/profiler-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Dark/profiler-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/console-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/console-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/options-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/options-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/profiler-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Icons/Light/profiler-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Logo_DarkBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Logo_DarkBG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Logo_LightBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/Logo_LightBG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/WelcomeLogo_DarkBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/WelcomeLogo_DarkBG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/WelcomeLogo_LightBG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Editor/WelcomeLogo_LightBG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/README.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/BugReportPopover.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/BugReportPopover.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/BugReportSheet.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/BugReportSheet.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/DebugPanel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/DebugPanel.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/DockConsole.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/DockConsole.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/ActionOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/ActionOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/BoolOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/BoolOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/EnumOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/EnumOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/NumberOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/NumberOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/ReadOnlyOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/ReadOnlyOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/StringOption.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Options/StringOption.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/PinEntry.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/PinEntry.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/PinnedUI.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/PinnedUI.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/BugReporter.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/BugReporter.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Console.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Console.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Options.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Options.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Profiler.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/Profiler.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/System.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Tabs/System.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Trigger.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Resources/SRDebugger/UI/Prefabs/Trigger.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scenes/Sample.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scenes/Sample.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/AutoInitialize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/AutoInitialize.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ApiSignup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ApiSignup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ApiSignupWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ApiSignupWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/IntegrityChecking.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/IntegrityChecking.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/Migrations.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/Migrations.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ProfilerCameraListenerEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/ProfilerCameraListenerEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.Compiler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.Compiler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.Resources.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.Resources.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditorPaths.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditorPaths.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditorStrings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRDebugEditorStrings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRIntegrityCheckWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRIntegrityCheckWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRInternalEditorUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SRInternalEditorUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SROptionsWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SROptionsWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SettingsEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SettingsEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SettingsWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/SettingsWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/StompyRobot.SRDebugger.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/StompyRobot.SRDebugger.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/WelcomeWindow.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Editor/WelcomeWindow.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/IOptionContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/IOptionContainer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Api.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Api.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/ApiUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/ApiUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/BugReportApi.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/BugReportApi.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/BugReportScreenshotUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/BugReportScreenshotUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/CircularBuffer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/CircularBuffer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/EditorUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/EditorUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/InternalOptionsRegistry.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/InternalOptionsRegistry.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/OptionControlFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/OptionControlFactory.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/OptionDefinition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/OptionDefinition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Paths.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Paths.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/SRScriptRecompileHelper.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/SRScriptRecompileHelper.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Service.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Service.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Strings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Strings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Util.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Internal/Util.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerCameraListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerCameraListener.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerLateUpdateListener.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerLateUpdateListener.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/ProfilerServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/SRPProfilerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Profiler/SRPProfilerService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SRDebug.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SRDebug.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SRDebuggerInit.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SRDebuggerInit.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.Attributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.Attributes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/SROptions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IBugReportService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IBugReportService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IConsoleService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IConsoleService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugCameraService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugCameraService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugPanelService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugPanelService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugTriggerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDebugTriggerService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDockConsoleService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IDockConsoleService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IOptionsService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IOptionsService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IPinEntryService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IPinEntryService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IPinnedOptionsService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IPinnedOptionsService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IProfilerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/IProfilerService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/ISystemInformationService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/ISystemInformationService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/BugReportApiService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/BugReportApiService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/BugReportPopoverService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/BugReportPopoverService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugCameraServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugCameraServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugPanelServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugPanelServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugTriggerImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DebugTriggerImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DockConsoleServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/DockConsoleServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/KeyboardShortcutListenerService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/KeyboardShortcutListenerService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/OptionsServiceImpl.ReflectionOptionContainer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/OptionsServiceImpl.ReflectionOptionContainer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/OptionsServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/OptionsServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/PinEntryServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/PinEntryServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/PinnedUIServiceImpl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/PinnedUIServiceImpl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/SRDebugService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/SRDebugService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/StandardConsoleService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/StandardConsoleService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/SystemInformationService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/Implementation/SystemInformationService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/ServiceSelectors.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Services/ServiceSelectors.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Settings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Settings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ConsoleEntryView.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ConsoleEntryView.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ConsoleLogControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ConsoleLogControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/ActionControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/ActionControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/BoolControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/BoolControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/DataBoundControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/DataBoundControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/EnumControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/EnumControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/NumberControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/NumberControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/OptionsControlBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/OptionsControlBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/ReadOnlyControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/ReadOnlyControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/StringControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Data/StringControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/InfoBlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/InfoBlock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/MultiTapButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/MultiTapButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/PinEntryControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/PinEntryControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerFPSLabel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerFPSLabel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerMemoryBlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerMemoryBlock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerMonoBlock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/Profiler/ProfilerMonoBlock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerEnableControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerEnableControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerGraphAxisLabel.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerGraphAxisLabel.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerGraphControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/ProfilerGraphControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/SRTabButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Controls/SRTabButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/DebugPanelRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/DebugPanelRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/DebuggerTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/DebuggerTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/MobileMenuController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/MobileMenuController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/BugReportPopoverRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/BugReportPopoverRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/BugReportSheetController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/BugReportSheetController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/CategoryGroup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/CategoryGroup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ConfigureCanvasFromSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ConfigureCanvasFromSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ConsoleTabQuickViewControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ConsoleTabQuickViewControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DebugPanelBackgroundBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DebugPanelBackgroundBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DockConsoleController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DockConsoleController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DockConsoleRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/DockConsoleRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ErrorNotifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ErrorNotifier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/FloatOverElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/FloatOverElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/HandleManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/HandleManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/IEnableTab.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/IEnableTab.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/LoadingSpinnerBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/LoadingSpinnerBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/PinnedUIRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/PinnedUIRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SRTab.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SRTab.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SRTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SRTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SafeAreaSizer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SafeAreaSizer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ScrollRectPatch.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ScrollRectPatch.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ScrollSettingsBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/ScrollSettingsBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SetLayerFromSettings.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/SetLayerFromSettings.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/TriggerRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/TriggerRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/VersionTextBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Other/VersionTextBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/BugReportTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/BugReportTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/ConsoleTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/ConsoleTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/InfoTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/InfoTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/OptionsTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/OptionsTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/ProfilerTabController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/UI/Tabs/ProfilerTabController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Version.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/Scripts/Version.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/StompyRobot.SRDebugger.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/StompyRobot.SRDebugger.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/FONT LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/FONT LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Black.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Black.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Black_LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Black_LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Bold.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Bold_LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Bold_LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Light.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Light_LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Light_LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Medium.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Medium_LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/Orbitron Medium_LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/SourceCodePro-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/SourceCodePro-Regular.otf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/SourceCodePro-Regular_LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Fonts/SourceCodePro-Regular_LICENSE.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/AboutTab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/AboutTab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Console.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Console/Item.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Console/Item.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/InfoBlock.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/InfoBlock.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Options.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Options/Category.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/Options/Category.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SR_ModalPopup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SR_ModalPopup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SideBar.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SideBar/ConsoleTabButtonContent.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SideBar/ConsoleTabButtonContent.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SideBar/Tab.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Prefabs/SideBar/Tab.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Alert.PSD" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Alert.PSD.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/BG.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/BG/footer_lodyas.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/BG/footer_lodyas.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Circle.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Circle.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/Filter-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/Filter-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/clipboard-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/clipboard-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/close-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/close-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/collapse-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/collapse-32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/console-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/console-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/down-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/down-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/feedback-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/feedback-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/heart_monitor-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/heart_monitor-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/info-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/info-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-25.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-25.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/menu-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/message-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/message-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/open-dropdown-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/open-dropdown-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/outline-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/outline-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/pin-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/refresh-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/refresh-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/spider-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/spider-64.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/stompy_white_128.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/stompy_white_128.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-32.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-32.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Icons/trash2-50.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Logo.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Logo.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Logo@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Logo@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Fill@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Fill@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Outline@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/NumberButton_Outline@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Fill@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Fill@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Outline@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/Pin/PinDot_Outline@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-2px@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px@2x.psd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/RoundedCorner-5px@2x.psd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/loading@2x.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Sprites/Default/loading@2x.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/Default.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/Default.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultConsoleAltRow.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultConsoleAltRow.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultConsoleSelectedRow.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultConsoleSelectedRow.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultTabActive.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/UI/Styles/DefaultTabActive.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/usr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/usr/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/usr/Resources/SRDebugger.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/usr/Resources/SRDebugger/Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRDebugger/usr/Resources/SRDebugger/Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/External.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/External/Jetbrains.Annotations.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/External/Jetbrains.Annotations.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/External/MiniJSON.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/External/MiniJSON.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Internal.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Internal/ComponentMenuPaths.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Internal/ComponentMenuPaths.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/LICENSE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Collections.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Collections/SRList.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Collections/SRList.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRAutoSingleton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRAutoSingleton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRMonoBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRMonoBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRMonoBehaviourEx.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRMonoBehaviourEx.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRSingleton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Components/SRSingleton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Coroutines.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Coroutines.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/FloatExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/FloatExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/GameObjectExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/GameObjectExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/IListExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/IListExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/NetFxExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/NetFxExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/StringExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/StringExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/TransformExtensions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Extensions/TransformExtensions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/AssetUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/AssetUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/Hierarchy.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/Hierarchy.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/MethodReference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/MethodReference.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/PropertyReference.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/PropertyReference.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRDebugUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRDebugUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRFileUtil.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRFileUtil.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRInstantiate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRInstantiate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.Tweening.Functions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.Tweening.Functions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.Tweening.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.Tweening.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRMath.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRReflection.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Helpers/SRReflection.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/Attributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/Attributes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/IAsyncService.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/IAsyncService.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRDependencyServiceBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRDependencyServiceBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRSceneServiceBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRSceneServiceBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRServiceBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRServiceBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRServiceManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/Service/SRServiceManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ContentFitText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ContentFitText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopyLayoutElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopyLayoutElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopyPreferredSize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopyPreferredSize.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopySizeIntoLayoutElement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/CopySizeIntoLayoutElement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/DragHandle.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/DragHandle.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/CopyLayoutElementEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/CopyLayoutElementEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/CopyPreferredSizeEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/CopyPreferredSizeEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/LongPressButtonEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/LongPressButtonEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/SRNumberButtonEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/SRNumberButtonEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StompyRobot.SRF.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StompyRobot.SRF.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StyleComponentEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StyleComponentEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StyleSheetEditor.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Editor/StyleSheetEditor.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/FlashGraphic.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/FlashGraphic.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/InheritColour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/InheritColour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Layout.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Layout/FlowLayoutGroup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Layout/FlowLayoutGroup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Layout/VirtualVerticalLayoutGroup.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Layout/VirtualVerticalLayoutGroup.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/LongPressButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/LongPressButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveEnable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveEnable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveResize.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ResponsiveResize.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRNumberButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRNumberButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRNumberSpinner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRNumberSpinner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRRetinaScaler.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRRetinaScaler.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRSpinner.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRSpinner.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/SRText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ScrollToBottomBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/ScrollToBottomBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleComponent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleComponent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleRoot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleRoot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleSheet.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/StyleSheet.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Unselectable.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/Scripts/UI/Unselectable.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/StompyRobot.SRF.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SRF/StompyRobot.SRF.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.Attributes.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.Attributes.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.Test.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.Test.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/SROptions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/link.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/ThirdParty/StompyRobot/SROptions/link.xml.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,10 +1054,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="82" />
+    <option name="cachedIndexableFilesCount" value="4" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -37,6 +1082,65 @@
     <urls />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="1.2398366507098284E-269" />
+      <entry key="S2" value="1.0568782130293541E-67" />
+      <entry key="S5" value="4.2869158352475765E-27" />
+      <entry key="S10" value="1.6711330415440537E-13" />
+      <entry key="S30" value="1.999847427573133E-4" />
+      <entry key="S60" value="0.03737992695301771" />
+      <entry key="M2" value="0.5139639682581572" />
+      <entry key="M5" value="2.975645842199638" />
+      <entry key="M10" value="8.38131565439789" />
+      <entry key="M15" value="14.669217010040652" />
+      <entry key="M30" value="32.249598592546384" />
+      <entry key="H1" value="55.410393215043676" />
+      <entry key="H2" value="76.72564857241576" />
+      <entry key="H4" value="91.75547906197386" />
+      <entry key="D1" value="107.44497109960918" />
+      <entry key="W1" value="110.48279319595561" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000000000000298" />
+      <entry key="S5" value="1.0000097660054388" />
+      <entry key="S10" value="1.00312534707103" />
+      <entry key="S30" value="1.1528274415763673" />
+      <entry key="S60" value="1.4694954434587986" />
+      <entry key="M2" value="1.9804258317141024" />
+      <entry key="M5" value="2.789132413053804" />
+      <entry key="M10" value="3.2853309516056663" />
+      <entry key="M15" value="3.494406149260751" />
+      <entry key="M30" value="3.731155922009168" />
+      <entry key="H1" value="3.861261479763716" />
+      <entry key="H2" value="3.9295108095830917" />
+      <entry key="H4" value="3.964470140005569" />
+      <entry key="D1" value="3.994038279535734" />
+      <entry key="W1" value="3.9991473381482314" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.9175722665795438E-10" />
+      <entry key="MS500" value="0.011390698272004523" />
+      <entry key="S2" value="0.3266913134733973" />
+      <entry key="S5" value="0.6392332958916146" />
+      <entry key="S10" value="0.8020482226367149" />
+      <entry key="S30" value="1.0709704592143712" />
+      <entry key="S60" value="1.4547291055821883" />
+      <entry key="M2" value="2.457492635799394" />
+      <entry key="M5" value="5.739975657620408" />
+      <entry key="M10" value="11.650255395689522" />
+      <entry key="M15" value="18.151318735765127" />
+      <entry key="M30" value="35.973577811453495" />
+      <entry key="H1" value="59.26765901196772" />
+      <entry key="H2" value="80.65301966593184" />
+      <entry key="H4" value="95.71883605959499" />
+      <entry key="D1" value="111.43881697588591" />
+      <entry key="W1" value="114.48191286638013" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false
@@ -59,8 +1163,12 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main-zenject-template-2.0.0&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;settings.space&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
@@ -114,7 +1222,82 @@
       <updated>1780670872065</updated>
       <workItem from="1780670872065" duration="51000" />
       <workItem from="1780670984138" duration="81000" />
+      <workItem from="1780671122449" duration="1355000" />
+      <workItem from="1780916592385" duration="1513000" />
     </task>
+    <task id="LOCAL-00001" summary="edit: update project settings">
+      <option name="closed" value="true" />
+      <created>1780671161550</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1780671161550</updated>
+    </task>
+    <task id="LOCAL-00002" summary="upd: zenject to ump">
+      <option name="closed" value="true" />
+      <created>1780907848162</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780907848162</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: menuhud buttons">
+      <option name="closed" value="true" />
+      <created>1780908348598</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780908348598</updated>
+    </task>
+    <task id="LOCAL-00004" summary="upd: odin inscpector">
+      <option name="closed" value="true" />
+      <created>1780909182676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1780909182676</updated>
+    </task>
+    <task id="LOCAL-00005" summary="upd: delete files odin inscpector">
+      <option name="closed" value="true" />
+      <created>1780909275963</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1780909275963</updated>
+    </task>
+    <task id="LOCAL-00006" summary="upd: unitask to ump">
+      <option name="closed" value="true" />
+      <created>1780910195608</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1780910195608</updated>
+    </task>
+    <task id="LOCAL-00007" summary="upd: coffee.ui-particle to ump">
+      <option name="closed" value="true" />
+      <created>1780910386655</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1780910386655</updated>
+    </task>
+    <task id="LOCAL-00008" summary="upd: delete vfx and tool color shaders">
+      <option name="closed" value="true" />
+      <created>1780910560985</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1780910560985</updated>
+    </task>
+    <task id="LOCAL-00009" summary="upd: 2d packages">
+      <option name="closed" value="true" />
+      <created>1780911259462</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1780911259462</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -141,6 +1324,17 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="edit: update project settings" />
+    <MESSAGE value="upd: zenject to ump" />
+    <MESSAGE value="fix: menuhud buttons" />
+    <MESSAGE value="edit: odin inscpector" />
+    <MESSAGE value="upd: odin inscpector" />
+    <MESSAGE value="upd: delete files odin inscpector" />
+    <MESSAGE value="upd: unitask to ump" />
+    <MESSAGE value="upd: coffee.ui-particle to ump" />
+    <MESSAGE value="upd: delete vfx and tool color shaders" />
+    <MESSAGE value="upd: 2d packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="upd: 2d packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

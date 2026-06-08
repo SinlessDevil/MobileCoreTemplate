@@ -1,5 +1,6 @@
 using System;
 using Code.Services.AudioVibrationFX.Sound;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -9,7 +10,7 @@ namespace Code.UI.Menu.Windows.Map
     public class ItemLevel : MonoBehaviour
     {
         [SerializeField] private Image _mainImage;
-        [SerializeField] private Text _text;
+        [SerializeField] private TMP_Text _text;
         [SerializeField] private Button _button;
         [Space(10)]
         [SerializeField] private Color _completedColor = Color.green;

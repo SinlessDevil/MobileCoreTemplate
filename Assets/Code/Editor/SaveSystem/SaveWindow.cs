@@ -1,17 +1,15 @@
 #if UNITY_EDITOR
 using System;
 using System.IO;
-using System.Text;
 using Code.Services.PersistenceProgress.Player;
-using Sirenix.OdinInspector.Editor;
-using Sirenix.Serialization;
-using Sirenix.Utilities.Editor;
+using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Code.Editor.Save
 {
-    public class SaveWindow : OdinEditorWindow
+    public class SaveWindow : EditorWindow
     {
         private const string PlayerPrefsKey = "PlayerData";
         private const string JsonFileName = "player_data.json";
@@ -21,79 +19,94 @@ namespace Code.Editor.Save
         private string JsonFilePath => Path.Combine(SavePath, JsonFileName);
         private string XmlFilePath => Path.Combine(SavePath, XmlFileName);
 
-        private Vector2 scrollPrefs;
-        private Vector2 scrollJson;
-        private Vector2 scrollXml;
+        // --- Cached UI elements ---
+        private HelpBox _prefsPathBox;
+        private ScrollView _prefsScroll;
+        private Label _prefsDataLabel;
+        private HelpBox _prefsMsgBox;
 
-        private string DecodedPrefsData;
-        private string DecodedJsonData;
-        private string DecodedXmlData;
+        private HelpBox _jsonPathBox;
+        private ScrollView _jsonScroll;
+        private Label _jsonDataLabel;
+        private HelpBox _jsonMsgBox;
 
-        private string PrefsMessage = "No PlayerPrefs data found.";
-        private string JsonMessage = "No JSON file found.";
-        private string XmlMessage = "No XML file found.";
-
-        // Foldout toggles
-        private bool showPlayerPrefs = true;
-        private bool showJson = true;
-        private bool showXml = true;
+        private HelpBox _xmlPathBox;
+        private ScrollView _xmlScroll;
+        private Label _xmlDataLabel;
+        private HelpBox _xmlMsgBox;
 
         [MenuItem("Tools/Save Window/All Saves Window", false, 2001)]
         private static void OpenWindow()
         {
-            SaveWindow window = GetWindow<SaveWindow>();
+            var window = GetWindow<SaveWindow>();
             window.titleContent = new GUIContent("All Saves Window");
             window.minSize = new Vector2(500, 600);
             window.Show();
         }
 
-        private void OnEnable() => Refresh();
-
-        protected override void DrawEditor(int index)
+        // CreateGUI() — вызывается один раз при открытии окна.
+        // Здесь строим дерево UI и вешаем колбэки.
+        public void CreateGUI()
         {
-            DrawFoldoutSection(ref showPlayerPrefs, "PlayerPrefs Preview", GetPlayerPrefsPath(), PrefsMessage, DecodedPrefsData, ref scrollPrefs, Refresh, DeletePlayerPrefs);
-            GUILayout.Space(20);
-            DrawFoldoutSection(ref showJson, "JSON File Preview", JsonFilePath, JsonMessage, DecodedJsonData, ref scrollJson, Refresh, DeleteJson);
-            GUILayout.Space(20);
-            DrawFoldoutSection(ref showXml, "XML File Preview", XmlFilePath, XmlMessage, DecodedXmlData, ref scrollXml, Refresh, DeleteXml);
+            var uxml = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/Code/Editor/SaveSystem/SaveWindow.uxml");
+            var uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(
+                "Assets/Code/Editor/SaveSystem/SaveWindow.uss");
+
+            uxml.CloneTree(rootVisualElement);
+            rootVisualElement.styleSheets.Add(uss);
+
+            BindSection(
+                pathBoxName:    "helpbox-prefs-path",
+                scrollName:     "scroll-prefs",
+                dataLabelName:  "label-prefs-data",
+                msgBoxName:     "helpbox-prefs-msg",
+                refreshBtnName: "btn-refresh-prefs",
+                deleteBtnName:  "btn-delete-prefs",
+                out _prefsPathBox, out _prefsScroll, out _prefsDataLabel, out _prefsMsgBox,
+                RefreshPlayerPrefs, DeletePlayerPrefs);
+
+            BindSection(
+                pathBoxName:    "helpbox-json-path",
+                scrollName:     "scroll-json",
+                dataLabelName:  "label-json-data",
+                msgBoxName:     "helpbox-json-msg",
+                refreshBtnName: "btn-refresh-json",
+                deleteBtnName:  "btn-delete-json",
+                out _jsonPathBox, out _jsonScroll, out _jsonDataLabel, out _jsonMsgBox,
+                RefreshJsonFile, DeleteJson);
+
+            BindSection(
+                pathBoxName:    "helpbox-xml-path",
+                scrollName:     "scroll-xml",
+                dataLabelName:  "label-xml-data",
+                msgBoxName:     "helpbox-xml-msg",
+                refreshBtnName: "btn-refresh-xml",
+                deleteBtnName:  "btn-delete-xml",
+                out _xmlPathBox, out _xmlScroll, out _xmlDataLabel, out _xmlMsgBox,
+                RefreshXmlFile, DeleteXml);
+
+            _prefsPathBox.text = GetPlayerPrefsPath();
+            _jsonPathBox.text  = JsonFilePath;
+            _xmlPathBox.text   = XmlFilePath;
+
+            Refresh();
         }
 
-        private void DrawFoldoutSection(ref bool foldout, string title, string path, string message, string data, ref Vector2 scroll, Action refresh, Action delete)
+        // Q<T>(name) — ищет элемент по имени и типу в дереве UXML.
+        private void BindSection(
+            string pathBoxName, string scrollName, string dataLabelName, string msgBoxName,
+            string refreshBtnName, string deleteBtnName,
+            out HelpBox pathBox, out ScrollView scroll, out Label dataLabel, out HelpBox msgBox,
+            Action onRefresh, Action onDelete)
         {
-            foldout = SirenixEditorGUI.Foldout(foldout, title);
-            if (!foldout) 
-                return;
+            pathBox   = rootVisualElement.Q<HelpBox>(pathBoxName);
+            scroll    = rootVisualElement.Q<ScrollView>(scrollName);
+            dataLabel = rootVisualElement.Q<Label>(dataLabelName);
+            msgBox    = rootVisualElement.Q<HelpBox>(msgBoxName);
 
-            SirenixEditorGUI.BeginBox();
-
-            EditorGUILayout.LabelField("Save Location", EditorStyles.boldLabel);
-            EditorGUILayout.HelpBox(path, MessageType.Info);
-
-            GUILayout.Space(10);
-
-            if (!string.IsNullOrEmpty(data))
-            {
-                scroll = EditorGUILayout.BeginScrollView(scroll, GUILayout.Height(300));
-                EditorGUILayout.TextArea(data, GUILayout.ExpandHeight(true));
-                EditorGUILayout.EndScrollView();
-            }
-            else
-            {
-                EditorGUILayout.HelpBox(message, MessageType.Warning);
-            }
-
-            GUILayout.Space(10);
-            GUI.backgroundColor = new Color(0.6f, 0.9f, 1f);
-            if (GUILayout.Button("🔄 Refresh", GUILayout.Height(35)))
-                refresh.Invoke();
-
-            GUILayout.Space(5);
-            GUI.backgroundColor = new Color(1f, 0.4f, 0.4f);
-            if (GUILayout.Button("🗑 Delete", GUILayout.Height(35)))
-                delete.Invoke();
-
-            GUI.backgroundColor = Color.white;
-            SirenixEditorGUI.EndBox();
+            rootVisualElement.Q<Button>(refreshBtnName).clicked += onRefresh;
+            rootVisualElement.Q<Button>(deleteBtnName).clicked  += onDelete;
         }
 
         private void Refresh()
@@ -101,117 +114,101 @@ namespace Code.Editor.Save
             RefreshPlayerPrefs();
             RefreshJsonFile();
             RefreshXmlFile();
-            Repaint();
         }
 
         private void RefreshPlayerPrefs()
         {
-            DecodedPrefsData = string.Empty;
+            string data = string.Empty;
+            string fallback = "No PlayerPrefs data found.";
 
             if (PlayerPrefs.HasKey(PlayerPrefsKey))
             {
                 try
                 {
-                    string base64 = PlayerPrefs.GetString(PlayerPrefsKey);
-                    byte[] data = Convert.FromBase64String(base64);
-                    var deserialized = Sirenix.Serialization.SerializationUtility.DeserializeValue<PlayerData>(data, DataFormat.JSON);
-                    string json = Encoding.UTF8.GetString(Sirenix.Serialization.SerializationUtility.SerializeValue(deserialized, DataFormat.JSON));
-                    DecodedPrefsData = json;
-                    PrefsMessage = string.Empty;
+                    string raw = PlayerPrefs.GetString(PlayerPrefsKey);
+                    var obj  = JsonConvert.DeserializeObject<PlayerData>(raw);
+                    data     = JsonConvert.SerializeObject(obj, Formatting.Indented);
                 }
                 catch (Exception e)
                 {
-                    DecodedPrefsData = $"Failed to decode PlayerPrefs:\n{e.Message}";
-                    PrefsMessage = "PlayerPrefs data decode failed.";
+                    data = $"Failed to decode PlayerPrefs:\n{e.Message}";
                 }
             }
-            else
-            {
-                PrefsMessage = "No PlayerPrefs data found.";
-            }
+
+            UpdateSection(_prefsScroll, _prefsDataLabel, _prefsMsgBox, data, fallback);
         }
 
         private void RefreshJsonFile()
         {
-            DecodedJsonData = string.Empty;
+            string data = string.Empty;
+            string fallback = "No JSON file found.";
 
             if (File.Exists(JsonFilePath))
             {
-                try
-                {
-                    DecodedJsonData = File.ReadAllText(JsonFilePath);
-                    JsonMessage = string.Empty;
-                }
-                catch (Exception e)
-                {
-                    DecodedJsonData = $"Failed to read JSON:\n{e.Message}";
-                    JsonMessage = "Failed to load JSON file.";
-                }
+                try { data = File.ReadAllText(JsonFilePath); }
+                catch (Exception e) { data = $"Failed to read JSON:\n{e.Message}"; }
             }
-            else
-            {
-                JsonMessage = "No JSON file found.";
-            }
+
+            UpdateSection(_jsonScroll, _jsonDataLabel, _jsonMsgBox, data, fallback);
         }
 
         private void RefreshXmlFile()
         {
-            DecodedXmlData = string.Empty;
+            string data = string.Empty;
+            string fallback = "No XML file found.";
 
             if (File.Exists(XmlFilePath))
             {
-                try
-                {
-                    DecodedXmlData = File.ReadAllText(XmlFilePath);
-                    XmlMessage = string.Empty;
-                }
-                catch (Exception e)
-                {
-                    DecodedXmlData = $"Failed to read XML:\n{e.Message}";
-                    XmlMessage = "Failed to load XML file.";
-                }
+                try { data = File.ReadAllText(XmlFilePath); }
+                catch (Exception e) { data = $"Failed to read XML:\n{e.Message}"; }
             }
-            else
-            {
-                XmlMessage = "No XML file found.";
-            }
+
+            UpdateSection(_xmlScroll, _xmlDataLabel, _xmlMsgBox, data, fallback);
+        }
+
+        // Показывает либо данные, либо предупреждение — через CSS-класс "hidden".
+        private static void UpdateSection(ScrollView scroll, Label dataLabel, HelpBox msgBox,
+            string data, string fallbackMessage)
+        {
+            bool hasData = !string.IsNullOrEmpty(data);
+
+            dataLabel.text = data;
+            scroll.EnableInClassList("hidden", !hasData);
+            msgBox.EnableInClassList("hidden", hasData);
+
+            if (!hasData)
+                msgBox.text = fallbackMessage;
         }
 
         private void DeletePlayerPrefs()
         {
-            if (!PlayerPrefs.HasKey(PlayerPrefsKey)) 
-                return;
-            
+            if (!PlayerPrefs.HasKey(PlayerPrefsKey)) return;
             PlayerPrefs.DeleteKey(PlayerPrefsKey);
             PlayerPrefs.Save();
             Debug.Log("PlayerPrefs deleted.");
-            Refresh();
+            RefreshPlayerPrefs();
         }
 
         private void DeleteJson()
         {
-            if (!File.Exists(JsonFilePath)) 
-                return;
-            
+            if (!File.Exists(JsonFilePath)) return;
             File.Delete(JsonFilePath);
             Debug.Log("JSON file deleted.");
-            Refresh();
+            RefreshJsonFile();
         }
 
         private void DeleteXml()
         {
-            if (!File.Exists(XmlFilePath)) 
-                return;
-            
+            if (!File.Exists(XmlFilePath)) return;
             File.Delete(XmlFilePath);
             Debug.Log("XML file deleted.");
-            Refresh();
+            RefreshXmlFile();
         }
 
         private string GetPlayerPrefsPath()
         {
 #if UNITY_EDITOR_WIN
-            return $@"Windows Registry:\HKEY_CURRENT_USER\Software\Unity\UnityEditor\{Application.companyName}\{Application.productName}";
+            return $@"Windows Registry: HKEY_CURRENT_USER\Software\Unity\UnityEditor\{Application.companyName}\{Application.productName}";
 #elif UNITY_EDITOR_OSX
             return $"~/Library/Preferences/unity.{Application.companyName}.{Application.productName}.plist";
 #else

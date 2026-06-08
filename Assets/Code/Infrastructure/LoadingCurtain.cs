@@ -1,6 +1,6 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Code.Infrastructure
 {
@@ -11,7 +11,7 @@ namespace Code.Infrastructure
         
         [SerializeField] private RectTransform _right;
         [SerializeField] private RectTransform _left;
-        [SerializeField] private Text _loadingText;
+        [SerializeField] private TMP_Text _loadingText;
 
         private Coroutine _loadingTextCoroutine;
 

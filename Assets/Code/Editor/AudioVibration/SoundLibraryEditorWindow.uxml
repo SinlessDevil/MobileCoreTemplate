@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- Existing Enums -->
+        <ui:Foldout name="foldout-enums" text="Existing Enums" value="false" class="section">
+            <ui:TextField name="tf-sound2d" label="Sound2D" multiline="true" class="enum-preview" />
+            <ui:TextField name="tf-sound3d" label="Sound3D" multiline="true" class="enum-preview" />
+            <ui:TextField name="tf-music"   label="Music"   multiline="true" class="enum-preview" />
+        </ui:Foldout>
+
+        <!-- Lists injected at runtime via PropertyField -->
+        <ui:VisualElement name="container-2d"    class="list-section" />
+        <ui:VisualElement name="container-3d"    class="list-section" />
+        <ui:VisualElement name="container-music" class="list-section" />
+
+        <ui:Button name="btn-generate" text="Generate Enums" class="btn-generate" />
+
+    </ui:ScrollView>
+</ui:UXML>

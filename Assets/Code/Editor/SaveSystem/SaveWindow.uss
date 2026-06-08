@@ -1,0 +1,59 @@
+/* === Section container === */
+.save-section {
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+/* Bold label "Save Location" */
+.section-title {
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+/* Scrollable data area */
+.data-scroll {
+    height: 280px;
+    margin-bottom: 8px;
+    background-color: rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+/* Text inside the scroll */
+.data-label {
+    white-space: normal;
+    padding: 6px;
+    font-size: 11px;
+}
+
+/* Refresh button — blue tint */
+.btn-refresh {
+    height: 32px;
+    margin-bottom: 4px;
+    background-color: rgb(100, 180, 220);
+    color: rgb(10, 10, 10);
+    border-radius: 4px;
+    -unity-font-style: bold;
+}
+
+.btn-refresh:hover {
+    background-color: rgb(130, 200, 240);
+}
+
+/* Delete button — red tint */
+.btn-delete {
+    height: 32px;
+    background-color: rgb(210, 80, 80);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -unity-font-style: bold;
+}
+
+.btn-delete:hover {
+    background-color: rgb(230, 100, 100);
+}
+
+/* Utility: hide an element completely */
+.hidden {
+    display: none;
+}

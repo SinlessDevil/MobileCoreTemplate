@@ -12,15 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5244d878e9edf84484f76b7aaef563f, type: 3}
   m_Name: Sounds
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   Sounds2DData:
   - Name: Click
     Clip: {fileID: 8300000, guid: ca1fc5df9d7db6247a01f1ba4ad257ee, type: 3}
