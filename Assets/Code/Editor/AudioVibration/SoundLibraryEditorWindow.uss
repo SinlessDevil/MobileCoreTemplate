@@ -1,0 +1,31 @@
+.section {
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.enum-preview {
+    margin-bottom: 6px;
+    font-size: 11px;
+    background-color: rgba(0, 0, 0, 0.12);
+    border-radius: 3px;
+    white-space: normal;
+}
+
+.list-section {
+    margin-bottom: 12px;
+    padding: 0 4px;
+}
+
+.btn-generate {
+    height: 36px;
+    margin-top: 8px;
+    background-color: rgb(55, 160, 75);
+    color: rgb(255, 255, 255);
+    border-radius: 4px;
+    -unity-font-style: bold;
+    font-size: 13px;
+}
+
+.btn-generate:hover {
+    background-color: rgb(75, 185, 95);
+}

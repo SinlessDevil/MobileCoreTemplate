@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements"
+         editor-extension-mode="True">
+    <ui:ScrollView name="root-scroll">
+
+        <!-- Toolbar -->
+        <ui:VisualElement class="toolbar">
+            <ui:Button name="btn-find"          text="🔍 Find All Tests"               class="btn-find" />
+            <ui:Button name="btn-add-ignore"    text="➕ Add [Ignore] Attribute Tests"   class="btn-add-ignore" />
+            <ui:Button name="btn-remove-ignore" text="➖ Remove [Ignore] Attribute Tests" class="btn-remove-ignore" />
+            <ui:Button name="btn-test-runner"   text="📋 Open Test Runner"               class="btn-runner" />
+        </ui:VisualElement>
+
+        <!-- Groups filled at runtime -->
+        <ui:Foldout name="foldout-edit" text="Grouped Edit Mode" value="false" class="mode-section" />
+        <ui:Foldout name="foldout-play" text="Grouped Play Mode" value="false" class="mode-section" />
+
+    </ui:ScrollView>
+</ui:UXML>

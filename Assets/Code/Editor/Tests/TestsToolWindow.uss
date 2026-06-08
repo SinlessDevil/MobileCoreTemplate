@@ -1,0 +1,82 @@
+/* ===== Toolbar ===== */
+.toolbar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    padding: 4px;
+    background-color: rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+
+.toolbar > Button {
+    flex-grow: 1;
+    height: 32px;
+    margin: 2px;
+    border-radius: 4px;
+    -unity-font-style: bold;
+    color: rgb(255, 255, 255);
+}
+
+.btn-find          { background-color: rgb(50,  120, 210); }
+.btn-find:hover    { background-color: rgb(70,  145, 235); }
+
+.btn-add-ignore        { background-color: rgb(200, 120, 40); }
+.btn-add-ignore:hover  { background-color: rgb(225, 145, 60); }
+
+.btn-remove-ignore       { background-color: rgb(200, 60, 60); }
+.btn-remove-ignore:hover { background-color: rgb(225, 85, 85); }
+
+.btn-runner       { background-color: rgb(140, 140, 210); }
+.btn-runner:hover { background-color: rgb(165, 165, 230); }
+
+/* ===== Mode section (outer foldout) ===== */
+.mode-section {
+    margin-bottom: 16px;
+    padding: 0 4px;
+}
+
+/* ===== Assembly group foldout ===== */
+.group-foldout {
+    margin: 3px 0;
+    padding: 2px 6px;
+    background-color: rgba(0, 0, 0, 0.07);
+    border-radius: 3px;
+}
+
+/* ===== Test row ===== */
+.test-row {
+    flex-direction: row;
+    align-items: center;
+    padding: 3px 4px;
+    border-bottom-width: 1px;
+    border-color: rgba(128, 128, 128, 0.18);
+}
+
+.test-name {
+    flex-grow: 1;
+    font-size: 11px;
+    overflow: hidden;
+    -unity-text-overflow-position: end;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.test-toggle {
+    min-width: 80px;
+}
+
+.toggle-enabled > Label  { color: rgb(90, 210, 90); }
+.toggle-disabled > Label { color: rgb(210, 80, 80); }
+
+/* ===== Changed indicator ===== */
+.label-changed {
+    color: rgb(255, 160, 40);
+    -unity-font-style: bold;
+    font-size: 11px;
+    min-width: 60px;
+    margin-left: 6px;
+}
+
+.hidden {
+    display: none;
+}

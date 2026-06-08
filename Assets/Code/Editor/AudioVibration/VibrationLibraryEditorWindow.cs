@@ -4,44 +4,93 @@ using System.IO;
 using System.Linq;
 using Code.Services.AudioVibrationFX.Vibration;
 using Code.StaticData.AudioVibration;
-using Sirenix.OdinInspector;
-using Sirenix.OdinInspector.Editor;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Code.Editor.AudioVibration
 {
-    public class VibrationLibraryEditorWindow : OdinEditorWindow
+    public class VibrationLibraryEditorWindow : EditorWindow
     {
         private const string VibrationDataPath = "StaticData/Vibration/VibrationsData";
-        private const string EnumOutPutPath = "Assets/Code/Services/AudioVibrationFX/Vibration/VibrationType.cs";
+        private const string EnumOutPutPath    = "Assets/Code/Services/AudioVibrationFX/Vibration/VibrationType.cs";
+
+        private VibrationsData _vibrationsData;
+        private SerializedObject _serializedData;
+        private TextField _enumPreview;
 
         [MenuItem("Tools/Audio Vibration Window/Vibration Library", false, 2002)]
-        private static void OpenWindow()
+        private static void OpenWindow() => GetWindow<VibrationLibraryEditorWindow>().Show();
+
+        public void CreateGUI()
         {
-            GetWindow<VibrationLibraryEditorWindow>().Show();
+            var uxml = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
+                "Assets/Code/Editor/AudioVibration/VibrationLibraryEditorWindow.uxml");
+            var uss = AssetDatabase.LoadAssetAtPath<StyleSheet>(
+                "Assets/Code/Editor/AudioVibration/VibrationLibraryEditorWindow.uss");
+
+            uxml.CloneTree(rootVisualElement);
+            rootVisualElement.styleSheets.Add(uss);
+
+            _enumPreview           = rootVisualElement.Q<TextField>("tf-vibration-enum");
+            _enumPreview.isReadOnly = true;
+
+            rootVisualElement.Q<Button>("btn-generate").clicked += GenerateEnum;
+
+            LoadData();
         }
-        
-        private VibrationsData _vibrationsData;
 
-        [BoxGroup("Existing Enum"), ReadOnly]
-        [MultiLineProperty(5)]
-        [SerializeField]
-        private string _vibrationEnumPreview;
+        private void LoadData()
+        {
+            _vibrationsData = Resources.Load<VibrationsData>(VibrationDataPath);
 
-        [BoxGroup("Vibrations")]
-        [ShowInInspector, Searchable]
-        [ListDrawerSettings(
-            Expanded = true,
-            DraggableItems = true,
-            ShowPaging = true,
-            ListElementLabelName = "Name"
-        )]
-        private List<VibrationData> _editableVibrations;
+            if (_vibrationsData == null)
+            {
+                Debug.LogError($"VibrationsData not found at Resources/{VibrationDataPath}.asset");
+                return;
+            }
 
-        [BoxGroup("Generation")]
-        [Button("Generate Enum", ButtonSizes.Large)]
-        [GUIColor(0f, 1f, 0f)]
+            _serializedData = new SerializedObject(_vibrationsData);
+
+            var container = rootVisualElement.Q<VisualElement>("container-vibrations");
+            container.Clear();
+            var field = new PropertyField(_serializedData.FindProperty("Vibrations"), "Vibrations");
+            field.Bind(_serializedData);
+            container.Add(field);
+
+            UpdateEnumPreview();
+        }
+
+        private void OnDisable()
+        {
+            if (_vibrationsData != null)
+                EditorUtility.SetDirty(_vibrationsData);
+        }
+
+        private void UpdateEnumPreview()
+        {
+            if (_enumPreview == null) return;
+            _enumPreview.value = string.Join(", ", Enum.GetNames(typeof(VibrationType)));
+        }
+
+        public void UpdateVibrationTypesAfterReload()
+        {
+            if (_vibrationsData == null) return;
+
+            foreach (var v in _vibrationsData.Vibrations)
+            {
+                var sanitized = Sanitize(v.Name);
+                v.VibrationType = Enum.TryParse(sanitized, out VibrationType parsed)
+                    ? parsed
+                    : VibrationType.Unknown;
+            }
+
+            EditorUtility.SetDirty(_vibrationsData);
+            AssetDatabase.SaveAssets();
+            AssetDatabase.Refresh();
+        }
+
         private void GenerateEnum()
         {
             if (_vibrationsData == null)
@@ -50,108 +99,54 @@ namespace Code.Editor.AudioVibration
                 return;
             }
 
-            GenerateEnumFile(EnumOutPutPath, "VibrationType", _editableVibrations);
-            AssignEnumTypes(_editableVibrations);
-            SaveData();
+            _serializedData.ApplyModifiedProperties();
+            GenerateEnumFile(_vibrationsData.Vibrations);
+            AssignEnumTypes(_vibrationsData.Vibrations);
+            EditorUtility.SetDirty(_vibrationsData);
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
             UpdateEnumPreview();
         }
 
-        protected override void OnEnable()
+        private void GenerateEnumFile(List<VibrationData> list)
         {
-            base.OnEnable();
-
-            _vibrationsData = Resources.Load<VibrationsData>(VibrationDataPath);
-
-            if (_vibrationsData != null)
-            {
-                _editableVibrations = _vibrationsData.Vibrations;
-                UpdateEnumPreview();
-            }
-            else
-            {
-                Debug.LogError($"VibrationsData not found at Resources/{VibrationDataPath}.asset");
-                _editableVibrations = new List<VibrationData>();
-            }
-        }
-
-        protected override void OnDisable()
-        {
-            base.OnDisable();
-            SaveData();
-        }
-
-        private void GenerateEnumFile(string path, string enumName, List<VibrationData> vibrationList)
-        {
-            var names = vibrationList
+            var names = list
                 .Where(v => !string.IsNullOrWhiteSpace(v.Name))
-                .Select(v => v.Name.Replace(" ", "_").Replace("-", "_").Replace(".", "_").Trim())
+                .Select(v => Sanitize(v.Name))
                 .Distinct()
                 .ToList();
 
-            using (var writer = new StreamWriter(path))
+            using (var writer = new StreamWriter(EnumOutPutPath))
             {
                 writer.WriteLine("using System;");
                 writer.WriteLine();
                 writer.WriteLine("namespace Code.Services.AudioVibrationFX.Vibration");
                 writer.WriteLine("{");
                 writer.WriteLine("    [Serializable]");
-                writer.WriteLine($"    public enum {enumName}");
+                writer.WriteLine("    public enum VibrationType");
                 writer.WriteLine("    {");
                 writer.WriteLine("        Unknown = -1,");
-
                 for (int i = 0; i < names.Count; i++)
                     writer.WriteLine($"        {names[i]} = {i},");
-
                 writer.WriteLine("    }");
                 writer.WriteLine("}");
             }
 
-            Debug.Log($"[VibrationLibraryEditorWindow] Enum {enumName} generated at {path}");
+            Debug.Log($"[VibrationLibraryEditorWindow] VibrationType generated at {EnumOutPutPath}");
         }
 
         private void AssignEnumTypes(List<VibrationData> list)
         {
-            foreach (var vibration in list)
+            foreach (var v in list)
             {
-                var sanitized = vibration.Name.Replace(" ", "_").Replace("-", "_").Replace(".", "_").Trim();
-                if (Enum.TryParse(sanitized, out VibrationType parsed))
-                    vibration.VibrationType = parsed;
-                else
-                    vibration.VibrationType = VibrationType.Unknown;
+                var sanitized = Sanitize(v.Name);
+                v.VibrationType = Enum.TryParse(sanitized, out VibrationType parsed)
+                    ? parsed
+                    : VibrationType.Unknown;
             }
         }
 
-        public void UpdateVibrationTypesAfterReload()
-        {
-            foreach (var vibration in _editableVibrations)
-            {
-                var sanitized = vibration.Name.Replace(" ", "_").Replace("-", "_").Replace(".", "_").Trim();
-
-                if (Enum.TryParse(sanitized, out VibrationType parsed))
-                    vibration.VibrationType = parsed;
-                else
-                    vibration.VibrationType = VibrationType.Unknown;
-            }
-
-            SaveData();
-            AssetDatabase.SaveAssets();
-            AssetDatabase.Refresh();
-        }
-        
-        private void SaveData()
-        {
-            if (_vibrationsData != null)
-            {
-                EditorUtility.SetDirty(_vibrationsData);
-            }
-        }
-
-        private void UpdateEnumPreview()
-        {
-            _vibrationEnumPreview = string.Join(", ",
-                Enum.GetNames(typeof(VibrationType)));
-        }
+        private static string Sanitize(string name) =>
+            name.Replace(" ", "_").Replace("-", "_").Replace(".", "_").Trim();
     }
 }
