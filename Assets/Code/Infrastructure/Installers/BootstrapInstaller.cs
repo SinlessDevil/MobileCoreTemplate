@@ -25,6 +25,8 @@ using Code.Services.Storage;
 using Code.Services.Timer;
 using Code.Services.Window;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
 using Zenject;
 using Application = UnityEngine.Application;
 
@@ -41,6 +43,7 @@ namespace Code.Infrastructure.Installers
         {
             Debug.Log("Installer");
 
+            CreateEventSystem();
             BindMonoServices();
             BindServices();
             BindGameStateMachine();
@@ -146,6 +149,17 @@ namespace Code.Infrastructure.Installers
             Container.Bind<LoadMenuState>().AsSingle();
             Container.Bind<LoadLevelState>().AsSingle();
             Container.Bind<GameLoopState>().AsSingle();
+        }
+
+        private void CreateEventSystem()
+        {
+            if (FindObjectOfType<EventSystem>() != null)
+                return;
+
+            var go = new GameObject("EventSystem");
+            go.AddComponent<EventSystem>();
+            go.AddComponent<InputSystemUIInputModule>();
+            DontDestroyOnLoad(go);
         }
 
         private void BootstrapGame() => Container.Resolve<IStateMachine<IGameState>>().Enter<BootstrapState>();
