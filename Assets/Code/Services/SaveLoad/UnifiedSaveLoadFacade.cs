@@ -8,7 +8,6 @@ namespace Code.Services.SaveLoad
     {
         private readonly ISaveLoadService _prefsService;
         private readonly ISaveLoadService _jsonService;
-        private readonly ISaveLoadService _xmlService;
         private readonly IPersistenceProgressService _progressService;
 
         public UnifiedSaveLoadFacade(
@@ -17,7 +16,6 @@ namespace Code.Services.SaveLoad
             _progressService = progressService;
             _prefsService = new PrefsSaveLoadService(_progressService);
             _jsonService = new JsonSaveLoadService(_progressService);
-            _xmlService = new XmlSaveLoadService(_progressService);
         }
 
         public void SaveProgress(SaveMethod method)
@@ -38,8 +36,7 @@ namespace Code.Services.SaveLoad
         private ISaveLoadService GetService(SaveMethod method) => method switch
         {
             SaveMethod.PlayerPrefs => _prefsService,
-            SaveMethod.Json => _jsonService,
-            SaveMethod.Xml => _xmlService,
+            SaveMethod.Json        => _jsonService,
             _ => throw new Exception("Unknown save method.")
         };
     }

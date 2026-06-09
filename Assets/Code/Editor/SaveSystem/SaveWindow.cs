@@ -13,11 +13,9 @@ namespace Code.Editor.Save
     {
         private const string PlayerPrefsKey = "PlayerData";
         private const string JsonFileName = "player_data.json";
-        private const string XmlFileName = "player_data.xml";
 
         private string SavePath => Application.persistentDataPath;
         private string JsonFilePath => Path.Combine(SavePath, JsonFileName);
-        private string XmlFilePath => Path.Combine(SavePath, XmlFileName);
 
         // --- Cached UI elements ---
         private HelpBox _prefsPathBox;
@@ -29,11 +27,6 @@ namespace Code.Editor.Save
         private ScrollView _jsonScroll;
         private Label _jsonDataLabel;
         private HelpBox _jsonMsgBox;
-
-        private HelpBox _xmlPathBox;
-        private ScrollView _xmlScroll;
-        private Label _xmlDataLabel;
-        private HelpBox _xmlMsgBox;
 
         [MenuItem("Tools/Save Window/All Saves Window", false, 2001)]
         private static void OpenWindow()
@@ -76,19 +69,8 @@ namespace Code.Editor.Save
                 out _jsonPathBox, out _jsonScroll, out _jsonDataLabel, out _jsonMsgBox,
                 RefreshJsonFile, DeleteJson);
 
-            BindSection(
-                pathBoxName:    "helpbox-xml-path",
-                scrollName:     "scroll-xml",
-                dataLabelName:  "label-xml-data",
-                msgBoxName:     "helpbox-xml-msg",
-                refreshBtnName: "btn-refresh-xml",
-                deleteBtnName:  "btn-delete-xml",
-                out _xmlPathBox, out _xmlScroll, out _xmlDataLabel, out _xmlMsgBox,
-                RefreshXmlFile, DeleteXml);
-
             _prefsPathBox.text = GetPlayerPrefsPath();
             _jsonPathBox.text  = JsonFilePath;
-            _xmlPathBox.text   = XmlFilePath;
 
             Refresh();
         }
@@ -113,7 +95,6 @@ namespace Code.Editor.Save
         {
             RefreshPlayerPrefs();
             RefreshJsonFile();
-            RefreshXmlFile();
         }
 
         private void RefreshPlayerPrefs()
@@ -152,20 +133,6 @@ namespace Code.Editor.Save
             UpdateSection(_jsonScroll, _jsonDataLabel, _jsonMsgBox, data, fallback);
         }
 
-        private void RefreshXmlFile()
-        {
-            string data = string.Empty;
-            string fallback = "No XML file found.";
-
-            if (File.Exists(XmlFilePath))
-            {
-                try { data = File.ReadAllText(XmlFilePath); }
-                catch (Exception e) { data = $"Failed to read XML:\n{e.Message}"; }
-            }
-
-            UpdateSection(_xmlScroll, _xmlDataLabel, _xmlMsgBox, data, fallback);
-        }
-
         // Показывает либо данные, либо предупреждение — через CSS-класс "hidden".
         private static void UpdateSection(ScrollView scroll, Label dataLabel, HelpBox msgBox,
             string data, string fallbackMessage)
@@ -195,14 +162,6 @@ namespace Code.Editor.Save
             File.Delete(JsonFilePath);
             Debug.Log("JSON file deleted.");
             RefreshJsonFile();
-        }
-
-        private void DeleteXml()
-        {
-            if (!File.Exists(XmlFilePath)) return;
-            File.Delete(XmlFilePath);
-            Debug.Log("XML file deleted.");
-            RefreshXmlFile();
         }
 
         private string GetPlayerPrefsPath()
