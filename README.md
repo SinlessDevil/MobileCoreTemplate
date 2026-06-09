@@ -1,4 +1,4 @@
-# ZenMobile — Unity Mobile Game Template
+# MobileCoreTemplate — Unity Mobile Game Template
 
 A production-ready Unity template for mobile games (Android / iOS) built on Zenject dependency injection and Unity Addressables. Provides a complete infrastructure layer so development can begin from game logic rather than boilerplate.
 
