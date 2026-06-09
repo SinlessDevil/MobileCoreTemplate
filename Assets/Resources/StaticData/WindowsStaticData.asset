@@ -15,19 +15,19 @@ MonoBehaviour:
   Configs:
   - WindowTypeId: 1
     PrefabReference:
-      m_AssetGUID: 
+      m_AssetGUID: d66ec59c1b849364db472b1f30ff87af
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - WindowTypeId: 2
     PrefabReference:
-      m_AssetGUID: 
+      m_AssetGUID: c068641af1660c34599f7a5353201068
       m_SubObjectName: 
       m_SubObjectType: 
       m_EditorAssetChanged: 0
   - WindowTypeId: 4
     PrefabReference:
-      m_AssetGUID: 
+      m_AssetGUID: a49ed249b904583438540d19acdc5c33
       m_SubObjectName: 
       m_SubObjectType: 
-      m_EditorAssetChanged: 0
+      m_EditorAssetChanged: 1

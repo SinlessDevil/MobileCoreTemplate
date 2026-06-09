@@ -33,7 +33,7 @@ Services
   UIFactory / GameFactory   — Prefab instantiation via Zenject IInstantiator
   WindowService             — Window lifecycle via AssetReference
   StaticDataService         — ScriptableObject config loader
-  SaveLoadFacade            — Unified save/load (PlayerPrefs / JSON / XML)
+  SaveLoadFacade            — Unified save/load (PlayerPrefs / JSON)
   LevelService              — Level progression and completion
   TimeService               — Pause, resume, elapsed time
   SoundService              — 2D/3D audio with pooling
@@ -97,7 +97,7 @@ Assets/
       Factories/            — Factory base, UIFactory, GameFactory
       StaticData/           — IStaticDataService, StaticDataService
       PersistenceProgress/  — PlayerData, LoadingData, progress models
-      SaveLoad/             — ISaveLoadFacade, PlayerPrefs/JSON/XML backends
+      SaveLoad/             — ISaveLoadFacade, PlayerPrefs/JSON backends
       Levels/               — LevelService
       Window/               — IWindowService, WindowService
       Providers/Widgets/    — WidgetProvider, widget pooling
@@ -156,13 +156,12 @@ ScriptableObject assets are loaded from `Resources/StaticData/` at startup via `
 
 ## Save System
 
-Three backends, selected per call via `SaveMethod` enum:
+Two backends, selected per call via `SaveMethod` enum:
 
 | Backend | Class | Use case |
 |---|---|---|
-| PlayerPrefs | `PlayerPrefsStrategy` | Lightweight progress, settings |
-| JSON | `JsonStrategy` | Complex serializable data |
-| XML | `XmlStrategy` | Human-readable exports |
+| PlayerPrefs | `PrefsSaveLoadService` | Lightweight progress, settings |
+| JSON | `JsonSaveLoadService` | Complex serializable data |
 
 Progress is accessed through `IPersistenceProgressService` and persisted via `ISaveLoadFacade`.
 
@@ -196,7 +195,6 @@ Progress is accessed through `IPersistenceProgressService` and persisted via `IS
 | UniTask | UPM | Zero-allocation async/await |
 | Unity Addressables | UPM | Asset and scene loading |
 | TextMeshPro | UPM | UI text rendering |
-| SRDebugger | Assets/Plugins | In-game debug console |
 | UI Particle (Coffee) | UPM | Particle effects on UI canvas |
 
 ---
