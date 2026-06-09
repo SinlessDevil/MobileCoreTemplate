@@ -6,7 +6,6 @@ namespace Code.Services.SaveLoad
     public enum SaveMethod
     {
         PlayerPrefs,
-        Json,
-        Xml
+        Json
     }
 }
