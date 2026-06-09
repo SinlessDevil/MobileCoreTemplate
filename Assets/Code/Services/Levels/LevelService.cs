@@ -13,7 +13,10 @@ namespace Code.Services.Levels
         private readonly IPersistenceProgressService _persistenceProgressService;
         private readonly IStaticDataService _staticDataService;
         private readonly ITimeService _timerService;
-        
+
+        private PlayerLevelData LevelData =>
+            _persistenceProgressService.PlayerData.PlayerLevelData;
+
         public LevelService(
             IPersistenceProgressService persistenceProgressService,
             IStaticDataService staticDataService,
@@ -23,131 +26,83 @@ namespace Code.Services.Levels
             _staticDataService = staticDataService;
             _timerService = timerService;
         }
-        
-        public LevelStaticData GetCurrentLevelStaticData()
-        {
-            return _staticDataService.ForLevel(_persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId,
-                _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.LevelId);
-        }
 
-        public int GetCurrentLevel() => 
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.LevelId;
+        public LevelStaticData GetCurrentLevelStaticData() =>
+            _staticDataService.ForLevel(LevelData.CurrentProgress.ChapterId, LevelData.CurrentProgress.LevelId);
 
-        public int GetCurrentChapter() =>
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId;
+        public int GetCurrentLevel()   => LevelData.CurrentProgress.LevelId;
+        public int GetCurrentChapter() => LevelData.CurrentProgress.ChapterId;
 
-        public int GetCurrentLevelIndex() =>
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.LevelId - 1;
-        
-        public int GetCurrentChapterIndex() => 
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId - 1;
+        public int GetCurrentLevelIndex() => LevelData.CurrentProgress.LevelId - 1;
 
-        public LevelContainer GetCurrentLevelContainer()
-        {
-            var currentLevel = GetCurrentLevel();
-            var currentChapter = GetCurrentChapter();
-            
-            var playerData = _persistenceProgressService.PlayerData.PlayerLevelData;
-            var levelContainer = playerData.LevelsComleted.Find(lc =>
-                lc.ChapterId == currentChapter && lc.LevelId == currentLevel);
+        public int GetCurrentChapterIndex() => LevelData.CurrentProgress.ChapterId - 1;
 
-            return levelContainer ?? null;
-        }
-        
+        public LevelContainer GetCurrentLevelContainer() =>
+            LevelData.LevelsComleted.Find(lc =>
+                lc.ChapterId == LevelData.CurrentProgress.ChapterId &&
+                lc.LevelId   == LevelData.CurrentProgress.LevelId);
+
         public void SetUpCurrentLevel(int levelNumber, int chapterId)
         {
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.LevelId = levelNumber;
-            _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId = chapterId;
+            LevelData.CurrentProgress.LevelId   = levelNumber;
+            LevelData.CurrentProgress.ChapterId = chapterId;
         }
 
-        public void Cleanup()
+        public void LevelsComplete()
         {
-            
+            var current = LevelData.CurrentProgress;
+
+            if (IsLevelCompleted(current.ChapterId, current.LevelId))
+                return;
+
+            LevelData.LevelsComleted.Add(new LevelContainer
+            {
+                ChapterId = current.ChapterId,
+                LevelId   = current.LevelId,
+                Time      = _timerService.GetElapsedTime()
+            });
+
+            AdvanceLastProgress();
+
+            LevelData.CurrentProgress.ChapterId = LevelData.LastProgress.ChapterId;
+            LevelData.CurrentProgress.LevelId   = LevelData.LastProgress.LevelId;
         }
 
         public List<ChapterStaticData> GetAllChapters()
         {
-            HashSet<int> addedChapters = new HashSet<int>();
-            List<ChapterStaticData> chapters = new List<ChapterStaticData>();
-
-            var currentChapter = _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId;
-            var lastChapter = _persistenceProgressService.PlayerData.PlayerLevelData.LastProgress.ChapterId;
-            
-            foreach (var completedLevel in _persistenceProgressService.PlayerData.PlayerLevelData.LevelsComleted)
-            {
-                int chapterId = completedLevel.ChapterId;
-
-                if (addedChapters.Add(chapterId))
-                {
-                    chapters.Add(_staticDataService.ForChapter(chapterId));
-                }
-            }
-            
-            if (addedChapters.Add(currentChapter))
-            {
-                chapters.Add(_staticDataService.ForChapter(currentChapter));
-            }
-            
-            if (addedChapters.Add(lastChapter))
-            {
-                chapters.Add(_staticDataService.ForChapter(lastChapter));
-            }
-
+            int lastVirtualChapterId = LevelData.LastProgress.ChapterId;
+            var chapters = new List<ChapterStaticData>(lastVirtualChapterId);
+            for (int i = 1; i <= lastVirtualChapterId; i++)
+                chapters.Add(_staticDataService.ForChapter(i));
             return chapters;
         }
 
-        
-        public void LevelsComplete()
-        {
-            var playerData = _persistenceProgressService.PlayerData.PlayerLevelData;
-            
-            bool alreadyCompleted = playerData.LevelsComleted.Any(lc =>
-                lc.ChapterId == playerData.CurrentProgress.ChapterId && lc.LevelId == playerData.CurrentProgress.LevelId);
-            
-            if (!alreadyCompleted)
-            {
-                playerData.LevelsComleted.Add(new LevelContainer
-                {
-                    ChapterId = playerData.LastProgress.ChapterId,
-                    LevelId = playerData.LastProgress.LevelId,
-                    Time = _timerService.GetElapsedTime()
-                });
-            }
-            else
-            {
-                return;
-            }
-            
-            playerData.LastProgress.LevelId++;
-            
-            var currentChapter = _staticDataService.ForChapter(playerData.LastProgress.ChapterId);
-            
-            if (playerData.LastProgress.LevelId > currentChapter.Levels.Count)
-            {
-                playerData.LastProgress.ChapterId++;
-                playerData.LastProgress.LevelId = 1;
-            }
+        public bool IsLevelCompleted(int chapterId, int levelId) =>
+            LevelData.LevelsComleted.Any(lc =>
+                lc.ChapterId == chapterId && lc.LevelId == levelId);
 
-            playerData.CurrentProgress.ChapterId = playerData.LastProgress.ChapterId;
-            playerData.CurrentProgress.LevelId = playerData.LastProgress.LevelId;
-        }
-        
-        public bool IsLevelCompleted(int chapterId, int levelId)
+        public bool IsLevelCurrent(int chapterId, int levelId) =>
+            LevelData.CurrentProgress.ChapterId == chapterId &&
+            LevelData.CurrentProgress.LevelId   == levelId;
+
+        public bool IsLastCompletedLevel(int chapterId, int levelId) =>
+            LevelData.LastProgress.ChapterId == chapterId &&
+            LevelData.LastProgress.LevelId   == levelId;
+
+        public void Cleanup() { }
+
+        private void AdvanceLastProgress()
         {
-            return _persistenceProgressService.PlayerData.PlayerLevelData.LevelsComleted
-                .Any(completedLevel => completedLevel.ChapterId == chapterId && completedLevel.LevelId == levelId);
-        }
-        
-        public bool IsLevelCurrent(int chapterId, int levelId)
-        {
-            return _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.LevelId == levelId &&
-                   _persistenceProgressService.PlayerData.PlayerLevelData.CurrentProgress.ChapterId == chapterId;
-        }
-        
-        public bool IsLastCompletedLevel(int chapterId, int levelId)
-        {
-            return _persistenceProgressService.PlayerData.PlayerLevelData.LastProgress.ChapterId == chapterId &&
-                   _persistenceProgressService.PlayerData.PlayerLevelData.LastProgress.LevelId == levelId;
+            var last    = LevelData.LastProgress;
+            var chapter = _staticDataService.ForChapter(last.ChapterId);
+
+            last.LevelId++;
+
+            if (last.LevelId > chapter.Levels.Count)
+            {
+                last.ChapterId++;
+                last.LevelId = 1;
+            }
         }
     }
 }
