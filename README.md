@@ -8,7 +8,7 @@ A production-ready Unity template for mobile games (Android / iOS) built on Zenj
 
 | Requirement | Version |
 |---|---|
-| Unity | 2022.3 LTS or newer |
+| Unity | 2023.2.22f1 LTS or newer |
 | Target platforms | Android, iOS |
 | Render pipeline | URP |
 | .NET | Standard 2.1 |
