@@ -7,6 +7,7 @@ using UnityEditor.TestTools.TestRunner.Api;
 using UnityEngine;
 using UnityEngine.TestTools;
 using UnityEngine.UIElements;
+using TestMode = UnityEditor.TestTools.TestRunner.Api.TestMode;
 
 namespace Code.Editor.Tests
 {

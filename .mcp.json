@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "unity-mobile-core-template": {
+      "type": "stdio",
+      "command": "unity",
+      "args": [
+        "mcp",
+        "--project-path",
+        "E:\\Unity\\Projects\\SinlessDevil\\MobileCoreTemplate"
+      ]
+    }
+  }
+}
