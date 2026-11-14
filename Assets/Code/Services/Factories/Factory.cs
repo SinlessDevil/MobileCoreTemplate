@@ -1,3 +1,4 @@
+using System.Threading;
 using Code.Services.AssetProvider;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -30,9 +31,10 @@ namespace Code.Services.Factories
             return MoveToCurrentScene(_instantiator.InstantiatePrefab(prefab, parent));
         }
 
-        protected async UniTask<GameObject> Instantiate(string address, Transform parent, bool isCanvas)
+        protected async UniTask<GameObject> Instantiate(string address, Transform parent, bool isCanvas, CancellationToken cancellationToken)
         {
             GameObject prefab = await _assetProvider.Load<GameObject>(address);
+            cancellationToken.ThrowIfCancellationRequested();
             GameObject instance = _instantiator.InstantiatePrefab(prefab, parent);
             return isCanvas ? instance : MoveToCurrentScene(instance);
         }

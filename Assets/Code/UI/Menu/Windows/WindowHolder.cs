@@ -9,7 +9,6 @@ namespace Code.UI.Menu.Windows
         [SerializeField] private List<BaseWindow> _windows = new();
         [SerializeField] private ButtonNavigationHolder _buttonNavigationHolder;
         
-        private BaseWindow _currentWindow;
         private StateWindow _stateWindow;
 
         private void Update()
@@ -31,29 +30,16 @@ namespace Code.UI.Menu.Windows
             
             _stateWindow = new StateWindow(_windows);
             
+            UnsubscribeEvents();
             SubscribeEvents();
             OnSwipeWindow(typeWindow);
         }
 
-        private void HideWindows()
-        {
-            _windows.ForEach(window => window.gameObject.SetActive(false));
-        }
+        private void HideWindows() => _windows.ForEach(window => window.gameObject.SetActive(false));
+        private void InitWindows() => _windows.ForEach(window => window.Initialize());
 
-        private void InitWindows()
-        {
-            _windows.ForEach(window => window.Initialize());
-        }
-        
-        private void SubscribeEvents()
-        {
-            _buttonNavigationHolder.OpenedWindowEvent += OnSwipeWindow;
-        }
-        
-        private void UnsubscribeEvents()
-        {
-            _buttonNavigationHolder.OpenedWindowEvent -= OnSwipeWindow;
-        }
+        private void SubscribeEvents() => _buttonNavigationHolder.OpenedWindowEvent += OnSwipeWindow;
+        private void UnsubscribeEvents() => _buttonNavigationHolder.OpenedWindowEvent -= OnSwipeWindow;
 
         private void OnSwipeWindow(TypeWindow typeWindow)
         {

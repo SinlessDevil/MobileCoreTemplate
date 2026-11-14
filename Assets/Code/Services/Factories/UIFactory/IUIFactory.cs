@@ -1,3 +1,4 @@
+using System.Threading;
 using Code.UI;
 using Code.UI.Game;
 using Code.UI.Menu;
@@ -18,6 +19,6 @@ namespace Code.Services.Factories.UIFactory
         UniTask<GameHud> CreateGameHud();
         UniTask<MenuHud> CreateMenuHud();
         UniTask<Widget> CreateWidget(Vector3 position, Quaternion rotation);
-        UniTask<ItemLevel> CreateItemLevel(Transform parent);
+        UniTask<ItemLevel> CreateItemLevel(Transform parent, CancellationToken cancellationToken = default);
     }
 }

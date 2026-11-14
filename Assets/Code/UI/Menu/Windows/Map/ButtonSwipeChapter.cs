@@ -9,6 +9,8 @@ namespace Code.UI.Menu.Windows.Map
         [SerializeField] private Button _button;
         [SerializeField] private TypeSwipe _typeSwipe;
         
+        public TypeSwipe Direction => _typeSwipe;
+
         public event Action<TypeSwipe> SwipedChapterEvent;
 
         private void OnDestroy()
@@ -22,16 +24,8 @@ namespace Code.UI.Menu.Windows.Map
             SubscribeEvents();
         }
 
-        public void Enable()
-        {
-            _button.interactable = true;
-        }
-        
-        public void Disable()
-        {
-            _button.interactable = false;
-        }
-        
+        public void SetInteractable(bool interactable) => _button.interactable = interactable;
+
         private void SubscribeEvents()
         {
             _button.onClick.AddListener(OnSwipeChapter);

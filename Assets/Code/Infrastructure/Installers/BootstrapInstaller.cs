@@ -24,6 +24,8 @@ using Code.Services.StaticData;
 using Code.Services.Storage;
 using Code.Services.Timer;
 using Code.Services.Window;
+using Code.UI.Menu.ButtonsNavigation;
+using Code.UI.Menu.Windows.Map;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem.UI;
@@ -73,6 +75,10 @@ namespace Code.Infrastructure.Installers
             Container.BindInterfacesTo<AssetPreloaderConductor>().AsSingle();
 
             Container.BindInterfacesTo<UIFactory>().AsSingle();
+            Container.Bind<MapModel>().AsTransient();
+            Container.Bind<MapViewModel>().AsTransient();
+            Container.Bind<MenuNavigationModel>().AsTransient();
+            Container.Bind<MenuNavigationViewModel>().AsTransient();
             Container.BindInterfacesTo<GameFactory>().AsSingle();
             Container.BindInterfacesTo<WindowService>().AsSingle();
             Container.BindInterfacesTo<InputService>().AsSingle();

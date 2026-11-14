@@ -1,236 +1,138 @@
-using System;
 using System.Collections.Generic;
-using Code.Infrastructure.StateMachine;
-using Code.Infrastructure.StateMachine.Game.States;
-using Code.Services.AudioVibrationFX.Sound;
+using System.Threading;
 using Code.Services.Factories.UIFactory;
-using Code.Services.Levels;
-using Code.Services.PersistenceProgress;
-using Code.Services.SaveLoad;
-using Code.Services.StaticData;
-using Code.StaticData.Levels;
 using Cysharp.Threading.Tasks;
-using UnityEngine;
-using UnityEngine.UI;
-using Zenject;
 using DG.Tweening;
 using TMPro;
+using UnityEngine;
+using Zenject;
 
 namespace Code.UI.Menu.Windows.Map
 {
     public class MapWindow : BaseWindow
     {
+        private const float ChapterFadeDuration = 0.2f;
+
         [SerializeField] private TMP_Text _chapterName;
-        [SerializeField] private GridLayoutGroup _gridLayoutGroup;
+        [SerializeField] private UnityEngine.UI.GridLayoutGroup _gridLayoutGroup;
         [SerializeField] private List<ButtonSwipeChapter> _buttonsSwipeChapter;
         [SerializeField] private List<CanvasGroup> _canvasGroups;
 
-        private int _currentChapterIndex;
-
-        private List<ItemLevel> _levelPool = new();
-        private List<ChapterStaticData> _chapters;
-
-        private ILevelService _levelService;
+        private readonly List<ItemLevel> _levelPool = new();
+        private MapViewModel _viewModel;
         private IUIFactory _uiFactory;
-        private ISaveLoadFacade _saveLoadFacade;
-        private IStateMachine<IGameState> _stateMachine;
-        private IStaticDataService _staticData;
-        private ISoundService _soundService;
-        
-        [Inject]
-        public void Constructor(
-            ILevelService levelService,
-            IUIFactory uiFactory,
-            ISaveLoadFacade saveLoadFacade,
-            IStateMachine<IGameState> stateMachine,
-            IStaticDataService staticData,
-            IPersistenceProgressService persistenceProgressService,
-            ISoundService soundService)
-        {
-            _levelService = levelService;
-            _uiFactory = uiFactory;
-            _saveLoadFacade = saveLoadFacade;
-            _stateMachine = stateMachine;
-            _staticData = staticData;
-            _soundService = soundService;
-        }
+        private Sequence _fade;
+        private bool _initialized;
+        private bool _rendering;
 
-        private void OnDestroy()
+        [Inject]
+        public void Constructor(MapViewModel viewModel, IUIFactory uiFactory)
         {
-            UnsubscribeEvents();
+            _viewModel = viewModel;
+            _uiFactory = uiFactory;
         }
 
         public override void Initialize()
         {
-            foreach (var buttonSwipeChapter in _buttonsSwipeChapter)
+            if (_initialized)
+                return;
+
+            _initialized = true;
+            foreach (ButtonSwipeChapter button in _buttonsSwipeChapter)
             {
-                buttonSwipeChapter.Initialize();
-                buttonSwipeChapter.SwipedChapterEvent += OnSwipeChapter;
+                button.Initialize();
+                button.SwipedChapterEvent += OnSwipeChapter;
             }
 
-            _chapters = _levelService.GetAllChapters();
-
-            _currentChapterIndex = _levelService.GetCurrentChapterIndex();
-
-            UpdateLevelUIAsync().Forget();
+            RenderAsync(_viewModel.Initialize(), false, destroyCancellationToken).Forget();
         }
 
-        private void UnsubscribeEvents()
+        private void OnDestroy()
         {
-            foreach (var buttonSwipeChapter in _buttonsSwipeChapter)
-            {
-                buttonSwipeChapter.SwipedChapterEvent -= OnSwipeChapter;
-            }
+            _fade?.Kill();
+            foreach (ButtonSwipeChapter button in _buttonsSwipeChapter)
+                button.SwipedChapterEvent -= OnSwipeChapter;
 
-            foreach (var itemLevel in _levelPool)
-            {
-                itemLevel.LoadLevelEvent -= OnLoadLevel;
-            }
+            foreach (ItemLevel item in _levelPool)
+                item.LoadLevelEvent -= StartLevel;
         }
 
-        private void OnSwipeChapter(TypeSwipe typeSwipe)
+        private void OnSwipeChapter(TypeSwipe direction)
         {
-            _soundService.PlaySound(Sound2DType.Click);
-            
-            switch (typeSwipe)
-            {
-                case TypeSwipe.Left when _currentChapterIndex > 0:
-                    _currentChapterIndex--;
-                    break;
-                case TypeSwipe.Right when _currentChapterIndex < _chapters.Count - 1:
-                    _currentChapterIndex++;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException(nameof(typeSwipe), typeSwipe, null);
-            }
-
-            AnimationRefreshWindow(DisableButton, EnableButton, () => UpdateLevelUIAsync().Forget());
+            if (!_rendering && _viewModel.TryMoveChapter(direction, out MapViewData data))
+                RenderAsync(data, true, destroyCancellationToken).Forget();
         }
 
-        private void AnimationRefreshWindow(Action disableButton, Action enableButton, Action refreshWindow)
+        private async UniTask RenderAsync(MapViewData data, bool animate, CancellationToken cancellationToken)
         {
-            foreach (var canvasGroup in _canvasGroups)
+            _rendering = true;
+            foreach (ButtonSwipeChapter button in _buttonsSwipeChapter)
+                button.SetInteractable(false);
+
+            try
             {
-                canvasGroup.DOFade(0f, 0.2f)
-                    .OnStart(() =>
-                    {
-                        disableButton();
-                    })
-                    .SetEase(Ease.Linear)
-                    .OnComplete(() =>
-                    {
-                        refreshWindow();
-                        
-                        canvasGroup.DOFade(1f, 0.2f)
-                            .SetEase(Ease.Linear)
-                            .OnComplete(() =>
-                            {
-                                enableButton();
-                            });
-                    });
-            }
-        }
+                if (animate)
+                    await FadeToAsync(0f, cancellationToken);
 
-        private async UniTask UpdateLevelUIAsync()
-        {
-            SetNameChapter();
-            ClearLevelPool();
-
-            var currentChapter = _chapters[_currentChapterIndex];
-
-            foreach (var level in currentChapter.Levels)
-            {
-                var levelIndex = currentChapter.Levels.IndexOf(level) + 1;
-                var chapterIndex = _currentChapterIndex + 1;
-
-                var levelItem = await GetPooledItemLevel();
-                levelItem.Initialize(levelIndex, chapterIndex);
-
-                if (_levelService.IsLevelCurrent(chapterIndex, levelIndex))
+                while (_levelPool.Count < data.Levels.Count)
                 {
-                    levelItem.SetCurrent();
-                    continue;
+                    ItemLevel item = await _uiFactory.CreateItemLevel(_gridLayoutGroup.transform, cancellationToken);
+                    item.LoadLevelEvent += StartLevel;
+                    item.gameObject.SetActive(false);
+                    _levelPool.Add(item);
                 }
 
-                if (_levelService.IsLastCompletedLevel(chapterIndex, levelIndex))
+                _chapterName.text = data.ChapterTitle;
+                for (int index = 0; index < data.Levels.Count; index++)
                 {
-                    levelItem.SetUnlockedNonCompleted();
-                    continue;
-                }
-
-                if (_levelService.IsLevelCompleted(chapterIndex, levelIndex))
-                {
-                    levelItem.SetCompleted();
-                    continue;
-                }
-
-                levelItem.SetLocked();
-            }
-
-            UpdateSwipeButtons();
-        }
-
-        private void SetNameChapter()
-        {
-            var currentChapter = _currentChapterIndex + 1;
-            _chapterName.text = "Chapter " + currentChapter;
-        }
-
-        private async UniTask<ItemLevel> GetPooledItemLevel()
-        {
-            foreach (var item in _levelPool)
-            {
-                if (!item.gameObject.activeSelf)
-                {
+                    ItemLevel item = _levelPool[index];
+                    item.Render(data.Levels[index]);
                     item.gameObject.SetActive(true);
-                    return item;
+                }
+
+                for (int index = data.Levels.Count; index < _levelPool.Count; index++)
+                    _levelPool[index].gameObject.SetActive(false);
+
+                foreach (ButtonSwipeChapter button in _buttonsSwipeChapter)
+                    button.gameObject.SetActive(button.Direction == TypeSwipe.Left ? data.CanSwipeLeft : data.CanSwipeRight);
+
+                if (animate)
+                    await FadeToAsync(1f, cancellationToken);
+            }
+            finally
+            {
+                _rendering = false;
+                if (!cancellationToken.IsCancellationRequested)
+                {
+                    if (animate)
+                    {
+                        foreach (CanvasGroup group in _canvasGroups)
+                            group.alpha = 1f;
+                    }
+                    foreach (ButtonSwipeChapter button in _buttonsSwipeChapter)
+                        button.SetInteractable(true);
                 }
             }
-
-            var newItem = await _uiFactory.CreateItemLevel(_gridLayoutGroup.transform);
-            newItem.LoadLevelEvent += OnLoadLevel;
-            _levelPool.Add(newItem);
-            return newItem;
         }
 
-        private void OnLoadLevel(int levelNumber, int chapterId)
+        private async UniTask FadeToAsync(float alpha, CancellationToken cancellationToken)
         {
-            _soundService.PlaySound(Sound2DType.Click);
-            
-            _levelService.SetUpCurrentLevel(levelNumber, chapterId);
-            _saveLoadFacade.SaveProgress(SaveMethod.PlayerPrefs);
+            if (_canvasGroups.Count == 0)
+                return;
 
-            _stateMachine.Enter<LoadLevelState, string>(_staticData.GameConfig.GameScene);
+            Sequence fade = DOTween.Sequence();
+            _fade = fade;
+            foreach (CanvasGroup group in _canvasGroups)
+                fade.Join(group.DOFade(alpha, ChapterFadeDuration).SetEase(Ease.Linear));
+
+            await UniTask.WaitUntil(() => !fade.IsActive(), cancellationToken: cancellationToken);
+            _fade = null;
         }
 
-        private void ClearLevelPool()
+        private void StartLevel(int levelNumber, int chapterNumber)
         {
-            foreach (var item in _levelPool)
-            {
-                item.gameObject.SetActive(false);
-            }
-        }
-
-        private void UpdateSwipeButtons()
-        {
-            _buttonsSwipeChapter[0].gameObject.SetActive(_currentChapterIndex > 0);
-            _buttonsSwipeChapter[1].gameObject.SetActive(_currentChapterIndex < _chapters.Count - 1);
-        }
-
-        private void EnableButton()
-        {
-            foreach (var buttonSwipeChapter in _buttonsSwipeChapter)
-            {
-                buttonSwipeChapter.Enable();
-            }
-        }
-
-        private void DisableButton()
-        {
-            foreach (var buttonSwipeChapter in _buttonsSwipeChapter)
-            {
-                buttonSwipeChapter.Disable();
-            }
+            if (!_rendering)
+                _viewModel.StartLevel(levelNumber, chapterNumber);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System.Threading;
 using Code.Services.AssetProvider;
 using Code.Services.StaticData;
 using Code.StaticData;
@@ -56,9 +57,9 @@ namespace Code.Services.Factories.UIFactory
             return (await Instantiate(ResourcePath.WidgetPath, position, rotation, null)).GetComponent<Widget>();
         }
 
-        public async UniTask<ItemLevel> CreateItemLevel(Transform parent)
+        public async UniTask<ItemLevel> CreateItemLevel(Transform parent, CancellationToken cancellationToken = default)
         {
-            return (await Instantiate(ResourcePath.ItemLevelPath, parent, true)).GetComponent<ItemLevel>();
+            return (await Instantiate(ResourcePath.ItemLevelPath, parent, true, cancellationToken)).GetComponent<ItemLevel>();
         }
     }
 }

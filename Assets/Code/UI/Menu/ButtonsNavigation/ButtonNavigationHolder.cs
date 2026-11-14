@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using Code.Services.AudioVibrationFX.Sound;
 using UnityEngine;
 using Zenject;
 
@@ -17,12 +16,12 @@ namespace Code.UI.Menu.ButtonsNavigation
         [SerializeField] private List<ButtonNavigation> _buttonNavigations = new();
         [SerializeField] private Animator _animator;
 
-        private ISoundService _soundService;
+        private MenuNavigationViewModel _viewModel;
         
         [Inject]
-        private void Constructor(ISoundService soundService)
+        private void Constructor(MenuNavigationViewModel viewModel)
         {
-            _soundService = soundService;
+            _viewModel = viewModel;
         }
         
         public event Action<TypeWindow> OpenedWindowEvent;
@@ -50,12 +49,13 @@ namespace Code.UI.Menu.ButtonsNavigation
             InitButtonNavigation();
             UnsubscribeEvents();
             SubscribeEvents();
-            SetUpButtonState(typeWindow);
+            _viewModel.Initialize(typeWindow);
+            SetUpButtonState(_viewModel.SelectedWindow);
         }
         
         private void InitButtonNavigation()
         {
-            foreach (var buttonNavigation in _buttonNavigations)
+            foreach (ButtonNavigation buttonNavigation in _buttonNavigations)
             {
                 buttonNavigation.Initialize();
             }
@@ -63,7 +63,7 @@ namespace Code.UI.Menu.ButtonsNavigation
         
         private void SubscribeEvents()
         {
-            foreach (var buttonNavigation in _buttonNavigations)
+            foreach (ButtonNavigation buttonNavigation in _buttonNavigations)
             {
                 buttonNavigation.OpenedWindowEvent += OnOpenedWindow;
             }
@@ -71,7 +71,7 @@ namespace Code.UI.Menu.ButtonsNavigation
         
         private void UnsubscribeEvents()
         {
-            foreach (var buttonNavigation in _buttonNavigations)
+            foreach (ButtonNavigation buttonNavigation in _buttonNavigations)
             {
                 buttonNavigation.OpenedWindowEvent -= OnOpenedWindow;
             }
@@ -79,11 +79,11 @@ namespace Code.UI.Menu.ButtonsNavigation
         
         private void OnOpenedWindow(TypeWindow typeWindow)
         {
-            _soundService.PlaySound(Sound2DType.Click);
+            _viewModel.SelectWindow(typeWindow);
             
-            SetUpButtonState(typeWindow);
+            SetUpButtonState(_viewModel.SelectedWindow);
             
-            OpenedWindowEvent?.Invoke(typeWindow);
+            OpenedWindowEvent?.Invoke(_viewModel.SelectedWindow);
         }
 
         private void SetUpButtonState(TypeWindow typeWindow)
